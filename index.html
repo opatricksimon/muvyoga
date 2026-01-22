@@ -88,89 +88,12 @@
             transition: all 0.3s ease;
         }
 
-        /* ========================================
-           BARRA DE URGÊNCIA
-           ======================================== */
-        .urgency-bar {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(135deg, #EDF069 0%, #d4d85e 100%);
-            padding: 12px 20px;
-            z-index: 9999;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            box-shadow: 0 2px 20px rgba(237, 240, 105, 0.3);
-        }
 
-        .urgency-bar__text {
-            font-family: 'Lexend Deca', sans-serif;
-            font-weight: 600;
-            font-size: 0.85rem;
-            color: #000;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .urgency-bar__counter {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0,0,0,0.15);
-            padding: 6px 16px;
-            border-radius: 30px;
-        }
-
-        .urgency-bar__pulse {
-            width: 10px;
-            height: 10px;
-            background: #ff4444;
-            border-radius: 50%;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.3); opacity: 0.7; }
-        }
-
-        .urgency-bar__number {
-            font-family: 'Lexend Deca', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: #000;
-        }
-
-        .urgency-bar__cta {
-            background: #000;
-            color: #EDF069;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-family: 'Lexend Deca', sans-serif;
-            font-weight: 600;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            text-decoration: none;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .urgency-bar__cta:hover {
-            background: #222;
-            transform: scale(1.05);
-        }
 
         /* ========================================
            ESTRUTURA PRINCIPAL
            ======================================== */
         .site-wrapper {
-            padding-top: 60px;
             align-items: center;
             display: flex;
             flex-direction: column;
@@ -566,8 +489,30 @@
         }
 
         /* ========================================
-           BOTÕES CTA
+           BOTÕES CTA - Com animação sutil de pulsar
            ======================================== */
+        @keyframes subtle-pulse {
+            0%, 100% { 
+                transform: scale(1); 
+                box-shadow: 0 0 0 0 rgba(237, 240, 105, 0.4);
+            }
+            50% { 
+                transform: scale(1.02); 
+                box-shadow: 0 0 20px 0 rgba(237, 240, 105, 0.3);
+            }
+        }
+
+        @keyframes subtle-pulse-dark {
+            0%, 100% { 
+                transform: scale(1); 
+                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
+            }
+            50% { 
+                transform: scale(1.02); 
+                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+            }
+        }
+
         .cta-button {
             display: inline-flex;
             align-items: center;
@@ -587,32 +532,39 @@
             text-decoration: none;
             transition: all 0.3s ease;
             margin-top: 2rem;
+            animation: subtle-pulse 2.5s ease-in-out infinite;
         }
 
         .cta-button:hover {
             background: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 30px rgba(237, 240, 105, 0.3);
+            transform: scale(1.05);
+            box-shadow: 0 10px 30px rgba(237, 240, 105, 0.4);
+            animation: none;
         }
 
         .cta-button--secondary {
             background: transparent;
             color: #EDF069;
             border: 2px solid #EDF069;
+            animation: none;
+            box-shadow: 0 0 15px 0 rgba(237, 240, 105, 0.15);
         }
 
         .cta-button--secondary:hover {
             background: #EDF069;
             color: #000;
+            box-shadow: 0 0 25px 0 rgba(237, 240, 105, 0.4);
         }
 
         .cta-button--dark {
             background: #000;
             color: #EDF069;
+            animation: subtle-pulse-dark 2.5s ease-in-out infinite;
         }
 
         .cta-button--dark:hover {
             background: #222;
+            animation: none;
         }
 
         .cta-wrapper {
@@ -1208,20 +1160,6 @@
         @media (max-width: 736px) {
             html { font-size: 12pt; }
             
-            .urgency-bar {
-                flex-direction: column;
-                gap: 10px;
-                padding: 10px 15px;
-            }
-            
-            .urgency-bar__text {
-                font-size: 0.75rem;
-            }
-            
-            .site-wrapper {
-                padding-top: 100px;
-            }
-            
             .container-component.style-1 > .wrapper > .inner,
             .container-component.style-2 > .wrapper > .inner {
                 padding: 3.5rem 2rem;
@@ -1309,16 +1247,6 @@
 </head>
 
 <body>
-    <!-- BARRA DE URGÊNCIA -->
-    <div class="urgency-bar">
-        <span class="urgency-bar__text">Vagas Limitadas</span>
-        <div class="urgency-bar__counter">
-            <span class="urgency-bar__pulse"></span>
-            <span class="urgency-bar__number">Restam apenas <strong id="vagas-count">8</strong> vagas</span>
-        </div>
-        <button onclick="openModal()" class="urgency-bar__cta">Garantir Minha Vaga</button>
-    </div>
-
     <div class="site-wrapper">
         <div class="site-main">
             <div class="inner">
@@ -1837,11 +1765,80 @@
             }
         });
 
-        // Form submit placeholder
-        document.getElementById('captureForm').addEventListener('submit', (e) => {
+        // Form submit - salva no Google Sheets E redireciona para WhatsApp
+        document.getElementById('captureForm').addEventListener('submit', function(e) {
             e.preventDefault();
-            // Aqui você pode adicionar a integração com Google Sheets ou WhatsApp
-            alert('Formulário enviado! Integração pendente.');
+            
+            const form = e.target;
+            const submitBtn = form.querySelector('.modal__submit');
+            const originalText = submitBtn.textContent;
+            
+            // Pega os dados do formulário
+            const nome = form.querySelector('input[name="nome"]').value;
+            const email = form.querySelector('input[name="email"]').value;
+            const telefone = form.querySelector('input[name="telefone"]').value;
+            
+            // Mostra loading
+            submitBtn.textContent = 'Enviando...';
+            submitBtn.disabled = true;
+            
+            // URL do Google Sheets Web App (substitua pela sua URL)
+            const googleSheetsURL = 'https://script.google.com/macros/s/AKfycbwRvVfBMNv0w_lGVOIJfA8XYZEXAMPLE/exec';
+            
+            // Envia para Google Sheets
+            fetch(googleSheetsURL, {
+                method: 'POST',
+                mode: 'no-cors',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    nome: nome,
+                    email: email,
+                    telefone: telefone,
+                    data: new Date().toLocaleString('pt-BR'),
+                    origem: 'MuvYoga Experience Máncora'
+                })
+            })
+            .then(() => {
+                // Fecha o modal
+                closeModal();
+                
+                // Monta a mensagem para WhatsApp
+                const mensagem = encodeURIComponent(
+                    `Olá, tenho interesse no MuvYoga Experience Máncora!\n\n` +
+                    `*Nome:* ${nome}\n` +
+                    `*Email:* ${email}\n` +
+                    `*WhatsApp:* ${telefone}`
+                );
+                
+                // Redireciona para WhatsApp do Ricardo Barbato
+                window.open(`https://wa.me/5511943421151?text=${mensagem}`, '_blank');
+                
+                // Reseta o formulário
+                form.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            })
+            .catch((error) => {
+                console.error('Erro:', error);
+                
+                // Mesmo com erro, redireciona para WhatsApp (para não perder o lead)
+                closeModal();
+                
+                const mensagem = encodeURIComponent(
+                    `Olá, tenho interesse no MuvYoga Experience Máncora!\n\n` +
+                    `*Nome:* ${nome}\n` +
+                    `*Email:* ${email}\n` +
+                    `*WhatsApp:* ${telefone}`
+                );
+                
+                window.open(`https://wa.me/5511943421151?text=${mensagem}`, '_blank');
+                
+                form.reset();
+                submitBtn.textContent = originalText;
+                submitBtn.disabled = false;
+            });
         });
     </script>
 </body>
