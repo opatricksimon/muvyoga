@@ -18,12 +18,10 @@
     <meta property="twitter:card" content="summary_large_image" />
     <link rel="canonical" href="https://muvyogainfo.carrd.co" />
     <link href="https://fonts.googleapis.com/css2?display=swap&family=Lexend+Deca:ital,wght@0,400;0,600;0,700;1,600&family=Inter:ital,wght@0,300;0,400;0,500;1,300" rel="stylesheet" type="text/css" />
-    <link rel="icon" type="image/png" href="assets/images/favicon.png?v=268f29e7" />
-    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png?v=268f29e7" />
     
     <style>
         /* ========================================
-           RESET & BASE (mantido do original)
+           RESET & BASE
            ======================================== */
         html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
         article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
@@ -35,8 +33,9 @@
         body{-webkit-text-size-adjust:none}
         mark{background-color:transparent;color:inherit}
         input::-moz-focus-inner{border:0;padding:0}
-        input[type="text"],input[type="email"],select,textarea{-moz-appearance:none;-webkit-appearance:none;-ms-appearance:none;appearance:none}
+        input[type="text"],input[type="email"],input[type="tel"],select,textarea{-moz-appearance:none;-webkit-appearance:none;-ms-appearance:none;appearance:none}
         *, *::before, *::after {box-sizing: border-box;}
+        button {font-family: inherit; cursor: pointer;}
 
         :root {
             --background-height: 100vh;
@@ -90,7 +89,7 @@
         }
 
         /* ========================================
-           BARRA DE URGÊNCIA (NOVO)
+           BARRA DE URGÊNCIA
            ======================================== */
         .urgency-bar {
             position: fixed;
@@ -157,6 +156,8 @@
             text-transform: uppercase;
             letter-spacing: 0.1em;
             text-decoration: none;
+            border: none;
+            cursor: pointer;
             transition: all 0.3s ease;
         }
 
@@ -165,15 +166,11 @@
             transform: scale(1.05);
         }
 
-        /* Espaço para compensar a barra fixa */
-        .site-wrapper {
-            padding-top: 60px;
-        }
-
         /* ========================================
-           ESTRUTURA PRINCIPAL (mantido/adaptado)
+           ESTRUTURA PRINCIPAL
            ======================================== */
         .site-wrapper {
+            padding-top: 60px;
             align-items: center;
             display: flex;
             flex-direction: column;
@@ -205,7 +202,7 @@
         }
 
         /* ========================================
-           TIPOGRAFIA (mantido do original)
+           TIPOGRAFIA
            ======================================== */
         .text-component {
             position: relative;
@@ -310,7 +307,7 @@
         }
 
         /* ========================================
-           CONTAINERS (mantido do original)
+           CONTAINERS
            ======================================== */
         .container-component {
             position: relative;
@@ -355,22 +352,22 @@
         }
 
         /* Hero container */
-        .container-component.instance-11 {
+        .container-component.instance-hero {
             background-image: 
                 url('data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cfilter%20id%3D%22noise%22%3E%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.875%22%20result%3D%22noise%22%20%2F%3E%20%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.12109375%200%22%20%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20filter%3D%22url%28%23noise%29%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22transparent%22%20opacity%3D%221%22%20%2F%3E%3C%2Fsvg%3E'), 
                 linear-gradient(to top, rgba(0,0,0,0.753), rgba(0,0,0,0.753)), 
-                url('assets/images/container11.jpg?v=268f29e7');
+                url('https://muvyogainfo.carrd.co/assets/images/container11.jpg?v=268f29e7');
             background-size: 512px, auto, cover;
             background-position: center, 0% 0%, center;
             background-repeat: repeat, repeat, no-repeat;
         }
 
         /* CTA container (final) */
-        .container-component.instance-2 {
+        .container-component.instance-cta {
             background-image: 
                 url('data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cfilter%20id%3D%22noise%22%3E%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.875%22%20result%3D%22noise%22%20%2F%3E%20%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.12109375%200%22%20%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20filter%3D%22url%28%23noise%29%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22transparent%22%20opacity%3D%221%22%20%2F%3E%3C%2Fsvg%3E'), 
                 linear-gradient(to top, rgba(0,0,0,0.753), rgba(0,0,0,0.753)), 
-                url('assets/images/container02.jpg?v=268f29e7');
+                url('https://muvyogainfo.carrd.co/assets/images/container02.jpg?v=268f29e7');
             background-size: 512px, auto, cover;
             background-position: center, 0% 0%, center;
             background-repeat: repeat, repeat, no-repeat;
@@ -483,7 +480,7 @@
         }
 
         /* ========================================
-           IMAGENS (mantido do original)
+           IMAGENS
            ======================================== */
         .image-component {
             display: block;
@@ -514,7 +511,7 @@
         }
 
         /* ========================================
-           GALERIA (mantido do original)
+           GALERIA
            ======================================== */
         .gallery-component > .inner {
             display: inline-block;
@@ -569,7 +566,7 @@
         }
 
         /* ========================================
-           BOTÕES CTA (NOVO - mantendo estilo original)
+           BOTÕES CTA
            ======================================== */
         .cta-button {
             display: inline-flex;
@@ -618,7 +615,6 @@
             background: #222;
         }
 
-        /* Wrapper para CTAs */
         .cta-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -628,7 +624,7 @@
         }
 
         /* ========================================
-           BOTÃO FLUTUANTE WHATSAPP (NOVO)
+           BOTÃO FLUTUANTE WHATSAPP
            ======================================== */
         .floating-cta {
             position: fixed;
@@ -649,6 +645,8 @@
             box-shadow: 0 5px 30px rgba(37, 211, 102, 0.4);
             transition: all 0.3s ease;
             animation: float 3s ease-in-out infinite;
+            border: none;
+            cursor: pointer;
         }
 
         .floating-cta:hover {
@@ -668,32 +666,22 @@
         }
 
         /* ========================================
-           SEÇÃO DE PREÇOS (NOVO/EDITADO)
+           SEÇÃO DE PREÇOS
            ======================================== */
-        .pricing-section {
-            padding: 6rem 2rem;
-            background: transparent;
-        }
-
-        .pricing-section__header {
-            text-align: center;
-            margin-bottom: 3rem;
-        }
-
         .pricing-card {
-            background: rgba(255,255,255,0.03);
-            border: 1px solid rgba(237, 240, 105, 0.2);
+            background: rgba(0,0,0,0.2);
+            border: 1px solid rgba(0,0,0,0.2);
             border-radius: 0;
             padding: 3rem;
-            max-width: 600px;
+            max-width: 100%;
             margin: 0 auto;
             text-align: center;
         }
 
         .pricing-card__badge {
             display: inline-block;
-            background: #EDF069;
-            color: #000;
+            background: #000;
+            color: #EDF069;
             font-family: 'Lexend Deca', sans-serif;
             font-weight: 600;
             font-size: 0.75rem;
@@ -710,7 +698,7 @@
         .pricing-card__currency {
             font-family: 'Lexend Deca', sans-serif;
             font-size: 1.5rem;
-            color: #EDF069;
+            color: #000;
             vertical-align: super;
         }
 
@@ -718,14 +706,14 @@
             font-family: 'Lexend Deca', sans-serif;
             font-size: 4rem;
             font-weight: 700;
-            color: #fff;
+            color: #000;
             line-height: 1;
         }
 
         .pricing-card__period {
             font-family: 'Inter', sans-serif;
             font-size: 1rem;
-            color: rgba(255,255,255,0.6);
+            color: rgba(0,0,0,0.6);
             margin-top: 0.5rem;
         }
 
@@ -734,7 +722,7 @@
             align-items: center;
             gap: 15px;
             margin: 2rem 0;
-            color: rgba(255,255,255,0.4);
+            color: rgba(0,0,0,0.4);
             font-family: 'Inter', sans-serif;
             font-size: 0.85rem;
         }
@@ -744,7 +732,7 @@
             content: '';
             flex: 1;
             height: 1px;
-            background: rgba(255,255,255,0.1);
+            background: rgba(0,0,0,0.1);
         }
 
         .pricing-card__brl {
@@ -754,7 +742,7 @@
         .pricing-card__brl-label {
             font-family: 'Inter', sans-serif;
             font-size: 0.9rem;
-            color: rgba(255,255,255,0.6);
+            color: rgba(0,0,0,0.6);
             margin-bottom: 0.5rem;
         }
 
@@ -762,12 +750,12 @@
             font-family: 'Lexend Deca', sans-serif;
             font-size: 2rem;
             font-weight: 600;
-            color: #fff;
+            color: #000;
         }
 
         .pricing-card__installments {
-            background: rgba(237, 240, 105, 0.1);
-            border: 1px dashed rgba(237, 240, 105, 0.3);
+            background: rgba(0,0,0,0.1);
+            border: 1px dashed rgba(0,0,0,0.2);
             padding: 1rem;
             margin-bottom: 2rem;
         }
@@ -775,14 +763,14 @@
         .pricing-card__installments-text {
             font-family: 'Inter', sans-serif;
             font-size: 0.9rem;
-            color: rgba(255,255,255,0.8);
+            color: rgba(0,0,0,0.7);
         }
 
         .pricing-card__installments-highlight {
             font-family: 'Lexend Deca', sans-serif;
             font-size: 1.2rem;
             font-weight: 600;
-            color: #EDF069;
+            color: #000;
             display: block;
             margin-top: 0.5rem;
         }
@@ -791,7 +779,7 @@
             text-align: left;
             margin: 2rem 0;
             padding: 1.5rem;
-            background: rgba(255,255,255,0.02);
+            background: rgba(0,0,0,0.1);
         }
 
         .pricing-card__includes-title {
@@ -799,7 +787,7 @@
             font-size: 0.85rem;
             text-transform: uppercase;
             letter-spacing: 0.1em;
-            color: #EDF069;
+            color: #000;
             margin-bottom: 1rem;
         }
 
@@ -810,7 +798,7 @@
         .pricing-card__includes-list li {
             font-family: 'Inter', sans-serif;
             font-size: 0.95rem;
-            color: rgba(255,255,255,0.7);
+            color: rgba(0,0,0,0.7);
             padding: 0.5rem 0;
             padding-left: 25px;
             position: relative;
@@ -820,12 +808,12 @@
             content: '✓';
             position: absolute;
             left: 0;
-            color: #EDF069;
+            color: #000;
             font-weight: bold;
         }
 
         .pricing-card__reserve {
-            background: rgba(255,255,255,0.05);
+            background: rgba(0,0,0,0.15);
             padding: 1.5rem;
             margin-top: 2rem;
         }
@@ -833,7 +821,7 @@
         .pricing-card__reserve-text {
             font-family: 'Inter', sans-serif;
             font-size: 0.9rem;
-            color: rgba(255,255,255,0.7);
+            color: rgba(0,0,0,0.6);
             margin-bottom: 0.5rem;
         }
 
@@ -841,19 +829,19 @@
             font-family: 'Lexend Deca', sans-serif;
             font-size: 1.5rem;
             font-weight: 600;
-            color: #fff;
+            color: #000;
         }
 
         .pricing-card__note {
             font-family: 'Inter', sans-serif;
             font-size: 0.8rem;
-            color: rgba(255,255,255,0.5);
+            color: rgba(0,0,0,0.5);
             margin-top: 1.5rem;
             font-style: italic;
         }
 
         /* ========================================
-           SEÇÃO DO CONDUTOR (EDITADO/EXPANDIDO)
+           SEÇÃO DO CONDUTOR
            ======================================== */
         .conductor-section {
             padding: 6rem 2rem;
@@ -939,7 +927,7 @@
         }
 
         /* ========================================
-           SEÇÃO FAQ (NOVO)
+           SEÇÃO FAQ
            ======================================== */
         .faq-section {
             padding: 6rem 2rem;
@@ -1040,7 +1028,7 @@
         }
 
         /* ========================================
-           MODAL DE CAPTURA (NOVO)
+           MODAL DE CAPTURA
            ======================================== */
         .modal-overlay {
             position: fixed;
@@ -1199,30 +1187,6 @@
         }
 
         /* ========================================
-           LINKS (mantido do original)
-           ======================================== */
-        .links-component {
-            display: flex;
-            justify-content: center;
-            gap: 1.25rem;
-            flex-wrap: wrap;
-            margin-top: 2rem;
-        }
-
-        .links-component > li > a {
-            font-family: 'Lexend Deca', sans-serif;
-            letter-spacing: 0.05rem;
-            font-size: 1.5em;
-            font-weight: 600;
-            color: #EDF069;
-            text-decoration: none;
-        }
-
-        .links-component > li > a:hover {
-            text-decoration: underline;
-        }
-
-        /* ========================================
            RESPONSIVO
            ======================================== */
         @media (max-width: 1680px) {
@@ -1293,13 +1257,6 @@
                 height: auto;
             }
             
-            .floating-cta {
-                bottom: 20px;
-                right: 20px;
-                padding: 12px 20px;
-                font-size: 0.8rem;
-            }
-            
             .floating-cta span {
                 display: none;
             }
@@ -1307,6 +1264,8 @@
             .floating-cta {
                 padding: 15px;
                 border-radius: 50%;
+                bottom: 20px;
+                right: 20px;
             }
             
             .pricing-card {
@@ -1349,24 +1308,22 @@
     </style>
 </head>
 <body>
-    <!-- BARRA DE URGÊNCIA (NOVO) -->
+    <!-- BARRA DE URGÊNCIA -->
     <div class="urgency-bar">
         <span class="urgency-bar__text">Vagas Limitadas</span>
         <div class="urgency-bar__counter">
             <span class="urgency-bar__pulse"></span>
             <span class="urgency-bar__number">Restam apenas <strong id="vagas-count">8</strong> vagas</span>
         </div>
-        <a href="#reservar" class="urgency-bar__cta">Garantir Minha Vaga</a>
+        <button onclick="openModal()" class="urgency-bar__cta">Garantir Minha Vaga</button>
     </div>
 
     <div class="site-wrapper">
         <div class="site-main">
             <div class="inner">
                 
-                <!-- ========================================
-                     HERO (mantido + CTA adicionado)
-                     ======================================== -->
-                <div id="container11" class="container-component instance-11 style-1">
+                <!-- HERO -->
+                <div class="container-component instance-hero style-1">
                     <div class="wrapper">
                         <div class="inner">
                             <p class="text-component style-5">movimento · natureza · conexão</p>
@@ -1376,16 +1333,14 @@
                                 <span class="p">Imersão internacional criada para restaurar vitalidade, presença e conexão por meio de práticas conscientes, rituais integrativos e protocolos que expandem a percepção e autonomia.</span>
                             </p>
                             <div class="cta-wrapper">
-                                <a href="#reservar" class="cta-button">Quero Participar</a>
+                                <button onclick="openModal()" class="cta-button">Quero Participar</button>
                                 <a href="#experiencia" class="cta-button cta-button--secondary">Saber Mais</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <!-- ========================================
-                     A EXPERIÊNCIA (mantido)
-                     ======================================== -->
+                <!-- A EXPERIÊNCIA -->
                 <div id="experiencia" class="container-component style-2">
                     <div class="wrapper">
                         <div class="inner">
@@ -1400,9 +1355,7 @@
                     </div>
                 </div>
 
-                <!-- ========================================
-                     OS PILARES (mantido)
-                     ======================================== -->
+                <!-- OS PILARES -->
                 <div class="container-component style-3">
                     <div class="wrapper">
                         <div class="inner">
@@ -1419,7 +1372,7 @@
                             <div>
                                 <div class="image-component style-1">
                                     <span class="frame">
-                                        <img src="assets/images/image02.jpg?v=268f29e7" alt="Os Pilares do MuvYoga" />
+                                        <img src="https://muvyogainfo.carrd.co/assets/images/image02.jpg?v=268f29e7" alt="Os Pilares do MuvYoga" />
                                     </span>
                                 </div>
                             </div>
@@ -1427,16 +1380,14 @@
                     </div>
                 </div>
 
-                <!-- ========================================
-                     O LUGAR (mantido - fundo amarelo)
-                     ======================================== -->
+                <!-- O LUGAR -->
                 <div class="container-component style-4">
                     <div class="wrapper">
                         <div class="inner">
                             <div>
                                 <div class="image-component style-1">
                                     <span class="frame">
-                                        <img src="assets/images/image03.jpg?v=268f29e7" alt="Máncora, Peru" />
+                                        <img src="https://muvyogainfo.carrd.co/assets/images/image03.jpg?v=268f29e7" alt="Máncora, Peru" />
                                     </span>
                                 </div>
                             </div>
@@ -1452,9 +1403,7 @@
                     </div>
                 </div>
 
-                <!-- ========================================
-                     DATA & DURAÇÃO (mantido)
-                     ======================================== -->
+                <!-- DATA & DURAÇÃO -->
                 <div class="container-component style-3">
                     <div class="wrapper">
                         <div class="inner">
@@ -1466,12 +1415,12 @@
                                     <span class="p">Sete noites e oito dias de imersão completa.</span>
                                     <span class="p">Tempo real para restaurar vitalidade e retornar ao corpo em um ambiente natural, simples e vivo.</span>
                                 </p>
-                                <a href="#reservar" class="cta-button">Reservar Minha Vaga</a>
+                                <button onclick="openModal()" class="cta-button">Reservar Minha Vaga</button>
                             </div>
                             <div>
                                 <div class="image-component style-1">
                                     <span class="frame">
-                                        <img src="assets/images/image04.jpg?v=268f29e7" alt="Máncora" />
+                                        <img src="https://muvyogainfo.carrd.co/assets/images/image04.jpg?v=268f29e7" alt="Máncora" />
                                     </span>
                                 </div>
                             </div>
@@ -1479,16 +1428,14 @@
                     </div>
                 </div>
 
-                <!-- ========================================
-                     PRA QUEM É (mantido - fundo amarelo)
-                     ======================================== -->
+                <!-- PRA QUEM É -->
                 <div class="container-component style-4">
                     <div class="wrapper">
                         <div class="inner">
                             <div>
                                 <div class="image-component style-1">
                                     <span class="frame">
-                                        <img src="assets/images/image01.jpg?v=268f29e7" alt="Para quem é" />
+                                        <img src="https://muvyogainfo.carrd.co/assets/images/image01.jpg?v=268f29e7" alt="Para quem é" />
                                     </span>
                                 </div>
                             </div>
@@ -1507,9 +1454,7 @@
                     </div>
                 </div>
 
-                <!-- ========================================
-                     O QUE ESTÁ INCLUÍDO - Parte 1 (mantido)
-                     ======================================== -->
+                <!-- O QUE ESTÁ INCLUÍDO - Parte 1 -->
                 <div class="container-component style-2">
                     <div class="wrapper">
                         <div class="inner">
@@ -1524,14 +1469,14 @@
                     </div>
                 </div>
 
-                <!-- GALERIA 1 (mantido) -->
+                <!-- GALERIA 1 -->
                 <div class="gallery-component style-1">
                     <div class="inner">
                         <ul>
                             <li>
                                 <span class="thumbnail">
                                     <span class="frame">
-                                        <img src="assets/images/gallery01/d1dcd56b.jpg?v=268f29e7" alt="Hospedagem" />
+                                        <img src="https://muvyogainfo.carrd.co/assets/images/gallery01/d1dcd56b.jpg?v=268f29e7" alt="Hospedagem" />
                                     </span>
                                 </span>
                                 <div class="caption"><p>Hospedagem</p></div>
@@ -1539,7 +1484,7 @@
                             <li>
                                 <span class="thumbnail">
                                     <span class="frame">
-                                        <img src="assets/images/gallery01/ea7ca342.jpg?v=268f29e7" alt="Alimentação" />
+                                        <img src="https://muvyogainfo.carrd.co/assets/images/gallery01/ea7ca342.jpg?v=268f29e7" alt="Alimentação" />
                                     </span>
                                 </span>
                                 <div class="caption"><p>Alimentação</p></div>
@@ -1547,7 +1492,7 @@
                             <li>
                                 <span class="thumbnail">
                                     <span class="frame">
-                                        <img src="assets/images/gallery01/ccfa2e1e.jpg?v=268f29e7" alt="Movimento" />
+                                        <img src="https://muvyogainfo.carrd.co/assets/images/gallery01/ccfa2e1e.jpg?v=268f29e7" alt="Movimento" />
                                     </span>
                                 </span>
                                 <div class="caption"><p>Movimento</p></div>
@@ -1556,9 +1501,7 @@
                     </div>
                 </div>
 
-                <!-- ========================================
-                     O QUE ESTÁ INCLUÍDO - Parte 2 (mantido)
-                     ======================================== -->
+                <!-- O QUE ESTÁ INCLUÍDO - Parte 2 -->
                 <div class="container-component style-2">
                     <div class="wrapper">
                         <div class="inner">
@@ -1573,14 +1516,14 @@
                     </div>
                 </div>
 
-                <!-- GALERIA 2 (mantido) -->
+                <!-- GALERIA 2 -->
                 <div class="gallery-component style-1">
                     <div class="inner">
                         <ul>
                             <li>
                                 <span class="thumbnail">
                                     <span class="frame">
-                                        <img src="assets/images/gallery02/2a16bbe2.jpg?v=268f29e7" alt="Integração" />
+                                        <img src="https://muvyogainfo.carrd.co/assets/images/gallery02/2a16bbe2.jpg?v=268f29e7" alt="Integração" />
                                     </span>
                                 </span>
                                 <div class="caption"><p>Integração</p></div>
@@ -1588,7 +1531,7 @@
                             <li>
                                 <span class="thumbnail">
                                     <span class="frame">
-                                        <img src="assets/images/gallery02/a0556f4b.jpg?v=268f29e7" alt="Natureza" />
+                                        <img src="https://muvyogainfo.carrd.co/assets/images/gallery02/a0556f4b.jpg?v=268f29e7" alt="Natureza" />
                                     </span>
                                 </span>
                                 <div class="caption"><p>Natureza</p></div>
@@ -1596,7 +1539,7 @@
                             <li>
                                 <span class="thumbnail">
                                     <span class="frame">
-                                        <img src="assets/images/gallery02/d55327f6.jpg?v=268f29e7" alt="Ambiente" />
+                                        <img src="https://muvyogainfo.carrd.co/assets/images/gallery02/d55327f6.jpg?v=268f29e7" alt="Ambiente" />
                                     </span>
                                 </span>
                                 <div class="caption"><p>Ambiente</p></div>
@@ -1605,9 +1548,7 @@
                     </div>
                 </div>
 
-                <!-- ========================================
-                     O QUE NÃO ESTÁ INCLUÍDO (mantido)
-                     ======================================== -->
+                <!-- O QUE NÃO ESTÁ INCLUÍDO -->
                 <div class="container-component style-2">
                     <div class="wrapper">
                         <div class="inner">
@@ -1624,16 +1565,14 @@
                     </div>
                 </div>
 
-                <!-- ========================================
-                     INVESTIMENTO (EDITADO - com preços completos)
-                     ======================================== -->
+                <!-- INVESTIMENTO -->
                 <div id="reservar" class="container-component style-4">
                     <div class="wrapper">
                         <div class="inner">
                             <div>
                                 <div class="image-component style-1">
                                     <span class="frame">
-                                        <img src="assets/images/image05.jpg?v=268f29e7" alt="Investimento" />
+                                        <img src="https://muvyogainfo.carrd.co/assets/images/image05.jpg?v=268f29e7" alt="Investimento" />
                                     </span>
                                 </div>
                             </div>
@@ -1641,50 +1580,48 @@
                                 <p class="text-component style-6">invista em você</p>
                                 <h2 class="text-component style-4">Investimento</h2>
                                 
-                                <div class="pricing-card" style="background: rgba(0,0,0,0.2); border-color: rgba(0,0,0,0.2);">
+                                <div class="pricing-card">
                                     <div class="pricing-card__badge">Valor da Imersão Completa</div>
                                     
                                     <div class="pricing-card__main-price">
-                                        <span class="pricing-card__currency" style="color: #000;">USD</span>
-                                        <span class="pricing-card__amount" style="color: #000;">1.020</span>
-                                        <div class="pricing-card__period" style="color: rgba(0,0,0,0.6);">por participante</div>
+                                        <span class="pricing-card__currency">USD</span>
+                                        <span class="pricing-card__amount">1.020</span>
+                                        <div class="pricing-card__period">por participante</div>
                                     </div>
                                     
-                                    <div class="pricing-card__divider" style="color: rgba(0,0,0,0.4);">
-                                        ou em reais
-                                    </div>
+                                    <div class="pricing-card__divider">ou em reais</div>
                                     
                                     <div class="pricing-card__brl">
-                                        <div class="pricing-card__brl-label" style="color: rgba(0,0,0,0.6);">Aproximadamente</div>
-                                        <div class="pricing-card__brl-amount" style="color: #000;">R$ 5.916</div>
+                                        <div class="pricing-card__brl-label">Aproximadamente</div>
+                                        <div class="pricing-card__brl-amount">R$ 5.916</div>
                                     </div>
                                     
-                                    <div class="pricing-card__installments" style="background: rgba(0,0,0,0.1); border-color: rgba(0,0,0,0.2);">
-                                        <span class="pricing-card__installments-text" style="color: rgba(0,0,0,0.7);">Ou parcele em até</span>
-                                        <span class="pricing-card__installments-highlight" style="color: #000;">12x de R$ 493</span>
+                                    <div class="pricing-card__installments">
+                                        <span class="pricing-card__installments-text">Ou parcele em até</span>
+                                        <span class="pricing-card__installments-highlight">12x de R$ 493</span>
                                     </div>
                                     
-                                    <div class="pricing-card__includes" style="background: rgba(0,0,0,0.1);">
-                                        <div class="pricing-card__includes-title" style="color: #000;">O que está incluído:</div>
+                                    <div class="pricing-card__includes">
+                                        <div class="pricing-card__includes-title">O que está incluído:</div>
                                         <ul class="pricing-card__includes-list">
-                                            <li style="color: rgba(0,0,0,0.7);">7 noites de hospedagem boutique</li>
-                                            <li style="color: rgba(0,0,0,0.7);">Alimentação completa</li>
-                                            <li style="color: rgba(0,0,0,0.7);">Práticas diárias de MuvYoga</li>
-                                            <li style="color: rgba(0,0,0,0.7);">Rituais de respiração e integração</li>
-                                            <li style="color: rgba(0,0,0,0.7);">Curadoria integral da experiência</li>
+                                            <li>7 noites de hospedagem boutique</li>
+                                            <li>Alimentação completa</li>
+                                            <li>Práticas diárias de MuvYoga</li>
+                                            <li>Rituais de respiração e integração</li>
+                                            <li>Curadoria integral da experiência</li>
                                         </ul>
                                     </div>
                                     
-                                    <div class="pricing-card__reserve" style="background: rgba(0,0,0,0.15);">
-                                        <div class="pricing-card__reserve-text" style="color: rgba(0,0,0,0.6);">Reserva de vaga (sinal)</div>
-                                        <div class="pricing-card__reserve-amount" style="color: #000;">USD 300 <small style="font-size: 0.6em; opacity: 0.7;">(~R$ 1.740)</small></div>
+                                    <div class="pricing-card__reserve">
+                                        <div class="pricing-card__reserve-text">Reserva de vaga (sinal)</div>
+                                        <div class="pricing-card__reserve-amount">USD 300 <small style="font-size: 0.6em; opacity: 0.7;">(~R$ 1.740)</small></div>
                                     </div>
                                     
-                                    <a href="https://wa.me/5511943421151?text=Olá,%20tenho%20interesse%20no%20MuvYoga%20Experience%20e%20quero%20reservar%20minha%20vaga." class="cta-button cta-button--dark" style="width: 100%; margin-top: 1.5rem;">
+                                    <button onclick="openModal()" class="cta-button cta-button--dark" style="width: 100%; margin-top: 1.5rem;">
                                         Reservar Minha Vaga
-                                    </a>
+                                    </button>
                                     
-                                    <p class="pricing-card__note" style="color: rgba(0,0,0,0.5);">
+                                    <p class="pricing-card__note">
                                         Saldo restante até 30 dias antes do início da imersão.<br>
                                         Grupo mínimo: 8 participantes · Máximo: 12 participantes<br>
                                         Caso o grupo mínimo não seja formado, o valor do sinal é integralmente devolvido.
@@ -1695,9 +1632,7 @@
                     </div>
                 </div>
 
-                <!-- ========================================
-                     CONDUTOR (EDITADO - Expandido com foto)
-                     ======================================== -->
+                <!-- CONDUTOR -->
                 <div class="conductor-section">
                     <div class="wrapper">
                         <div class="inner">
@@ -1723,9 +1658,7 @@
                     </div>
                 </div>
 
-                <!-- ========================================
-                     FAQ (NOVO)
-                     ======================================== -->
+                <!-- FAQ -->
                 <section class="faq-section">
                     <div class="faq-section__header">
                         <p class="text-component style-5">tire suas dúvidas</p>
@@ -1805,10 +1738,8 @@
                     </div>
                 </section>
 
-                <!-- ========================================
-                     CTA FINAL (mantido + melhorado)
-                     ======================================== -->
-                <div class="container-component instance-2 style-1">
+                <!-- CTA FINAL -->
+                <div class="container-component instance-cta style-1">
                     <div class="wrapper">
                         <div class="inner">
                             <p class="text-component style-5">pronto para viver essa experiência?</p>
@@ -1818,12 +1749,7 @@
                                 <span class="p">Se sentir que este chamado é para você, entre em contato para garantir sua vaga ou tirar dúvidas.</span>
                             </p>
                             <div class="cta-wrapper">
-                                <a href="https://wa.me/5511943421151?text=Olá,%20tenho%20interesse%20no%20MuvYoga%20Experience%20e%20quero%20reservar%20minha%20vaga." class="cta-button">
-                                    Falar com Ricardo
-                                </a>
-                                <button onclick="openModal()" class="cta-button cta-button--secondary">
-                                    Receber Informações
-                                </button>
+                                <button onclick="openModal()" class="cta-button">Garantir Minha Vaga</button>
                             </div>
                         </div>
                     </div>
@@ -1833,37 +1759,33 @@
         </div>
     </div>
 
-    <!-- ========================================
-         BOTÃO FLUTUANTE WHATSAPP (NOVO)
-         ======================================== -->
-    <a href="https://wa.me/5511943421151?text=Olá,%20tenho%20interesse%20no%20MuvYoga%20Experience." class="floating-cta" target="_blank">
+    <!-- BOTÃO FLUTUANTE -->
+    <button onclick="openModal()" class="floating-cta">
         <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
         </svg>
         <span>Fale Conosco</span>
-    </a>
+    </button>
 
-    <!-- ========================================
-         MODAL DE CAPTURA (NOVO)
-         ======================================== -->
+    <!-- MODAL DE CAPTURA -->
     <div class="modal-overlay" id="captureModal">
         <div class="modal">
             <button class="modal__close" onclick="closeModal()"></button>
             
             <div class="modal__icon">
                 <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                    <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-2 15l-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8l-9 9z"/>
                 </svg>
             </div>
             
-            <h3 class="modal__title">Receba Informações Completas</h3>
-            <p class="modal__subtitle">Deixe seu contato e enviaremos todos os detalhes da imersão</p>
+            <h3 class="modal__title">Quero Participar</h3>
+            <p class="modal__subtitle">Preencha seus dados para receber todas as informações e garantir sua vaga</p>
             
             <form class="modal__form" id="captureForm">
-                <input type="text" class="modal__input" placeholder="Seu nome" required />
-                <input type="email" class="modal__input" placeholder="Seu melhor e-mail" required />
-                <input type="tel" class="modal__input" placeholder="WhatsApp (com DDD)" required />
-                <button type="submit" class="modal__submit">Quero Receber</button>
+                <input type="text" class="modal__input" name="nome" placeholder="Seu nome completo" required />
+                <input type="email" class="modal__input" name="email" placeholder="Seu melhor e-mail" required />
+                <input type="tel" class="modal__input" name="telefone" placeholder="WhatsApp (com DDD)" required />
+                <button type="submit" class="modal__submit">Quero Garantir Minha Vaga</button>
             </form>
             
             <p class="modal__privacy">🔒 Seus dados estão seguros. Não fazemos spam.</p>
@@ -1914,11 +1836,26 @@
             }
         });
 
-        // Form submit
+        // Form submit - redireciona para WhatsApp com os dados
         document.getElementById('captureForm').addEventListener('submit', (e) => {
             e.preventDefault();
-            // Aqui você integraria com seu sistema de email/CRM
-            alert('Obrigado! Entraremos em contato em breve.');
+            
+            const nome = e.target.nome.value;
+            const email = e.target.email.value;
+            const telefone = e.target.telefone.value;
+            
+            const mensagem = `Olá Ricardo! Tenho interesse no MuvYoga Experience Máncora.
+
+*Meus dados:*
+Nome: ${nome}
+E-mail: ${email}
+WhatsApp: ${telefone}
+
+Gostaria de mais informações para garantir minha vaga.`;
+            
+            const whatsappUrl = `https://wa.me/5511943421151?text=${encodeURIComponent(mensagem)}`;
+            
+            window.open(whatsappUrl, '_blank');
             closeModal();
         });
 
