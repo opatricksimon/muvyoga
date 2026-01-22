@@ -1,1 +1,1940 @@
+<!DOCTYPE HTML>
+<html lang="pt-BR">
+<head>
+    <title>MUVYOGA EXPERIENCE MÁNCORA</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <meta name="color-scheme" content="light only" />
+    <meta name="description" content="IMERSÃO INTERNACIONAL - 12 a 19 de maio de 2026" />
+    <meta property="og:site_name" content="MUVYOGA EXPERIENCE MÁNCORA" />
+    <meta property="og:title" content="MUVYOGA EXPERIENCE MÁNCORA" />
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="IMERSÃO INTERNACIONAL" />
+    <meta property="og:image" content="https://muvyogainfo.carrd.co/assets/images/card.jpg?v=268f29e7" />
+    <meta property="og:image:type" content="image/jpeg" />
+    <meta property="og:image:width" content="1280" />
+    <meta property="og:image:height" content="800" />
+    <meta property="og:url" content="https://muvyogainfo.carrd.co" />
+    <meta property="twitter:card" content="summary_large_image" />
+    <link rel="canonical" href="https://muvyogainfo.carrd.co" />
+    <link href="https://fonts.googleapis.com/css2?display=swap&family=Lexend+Deca:ital,wght@0,400;0,600;0,700;1,600&family=Inter:ital,wght@0,300;0,400;0,500;1,300" rel="stylesheet" type="text/css" />
+    <link rel="icon" type="image/png" href="assets/images/favicon.png?v=268f29e7" />
+    <link rel="apple-touch-icon" href="assets/images/apple-touch-icon.png?v=268f29e7" />
+    
+    <style>
+        /* ========================================
+           RESET & BASE (mantido do original)
+           ======================================== */
+        html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline;}
+        article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block;}
+        body{line-height:1;}
+        ol,ul{list-style:none;}
+        blockquote,q{quotes:none;}
+        blockquote::before,blockquote::after,q::before,q::after{content:'';content:none;}
+        table{border-collapse:collapse;border-spacing:0;}
+        body{-webkit-text-size-adjust:none}
+        mark{background-color:transparent;color:inherit}
+        input::-moz-focus-inner{border:0;padding:0}
+        input[type="text"],input[type="email"],select,textarea{-moz-appearance:none;-webkit-appearance:none;-ms-appearance:none;appearance:none}
+        *, *::before, *::after {box-sizing: border-box;}
 
+        :root {
+            --background-height: 100vh;
+            --viewport-height: 100vh;
+            --primary-color: #EDF069;
+            --dark-bg: #131314;
+            --text-light: #FFFFFF;
+            --text-dark: #000000;
+        }
+
+        html {
+            font-size: 18pt;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            line-height: 1.0;
+            min-height: var(--viewport-height);
+            min-width: 320px;
+            overflow-x: hidden;
+            word-wrap: break-word;
+            background-color: var(--dark-bg);
+            font-family: 'Inter', sans-serif;
+        }
+
+        body::before {
+            background-attachment: scroll;
+            content: '';
+            display: block;
+            height: var(--background-height);
+            left: 0;
+            pointer-events: none;
+            position: fixed;
+            top: 0;
+            width: 100vw;
+            z-index: 0;
+            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20preserveAspectRatio%3D%22none%22%3E%20%3Cstyle%3E%20line%20%7B%20stroke-linecap%3A%20square%3B%20stroke-width%3A%201.01px%3B%20stroke%3A%20rgba(255,255,255,0.031)%3B%20vector-effect%3A%20non-scaling-stroke%3B%20%7D%20%3C%2Fstyle%3E%20%3Cline%20x1%3D%22256%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%22256%22%20%2F%3E%20%3Cline%20x1%3D%22256%22%20y1%3D%22512%22%20x2%3D%22512%22%20y2%3D%22256%22%20%2F%3E%3C%2Fsvg%3E');
+            background-size: 128px;
+            background-position: center;
+            background-repeat: repeat;
+        }
+
+        u { text-decoration: underline; }
+        strong { color: inherit; font-weight: bolder; }
+        em { font-style: italic; }
+
+        a {
+            color: inherit;
+            text-decoration: underline;
+            transition: all 0.3s ease;
+        }
+
+        /* ========================================
+           BARRA DE URGÊNCIA (NOVO)
+           ======================================== */
+        .urgency-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(135deg, #EDF069 0%, #d4d85e 100%);
+            padding: 12px 20px;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
+            box-shadow: 0 2px 20px rgba(237, 240, 105, 0.3);
+        }
+
+        .urgency-bar__text {
+            font-family: 'Lexend Deca', sans-serif;
+            font-weight: 600;
+            font-size: 0.85rem;
+            color: #000;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+        }
+
+        .urgency-bar__counter {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(0,0,0,0.15);
+            padding: 6px 16px;
+            border-radius: 30px;
+        }
+
+        .urgency-bar__pulse {
+            width: 10px;
+            height: 10px;
+            background: #ff4444;
+            border-radius: 50%;
+            animation: pulse 1.5s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); opacity: 1; }
+            50% { transform: scale(1.3); opacity: 0.7; }
+        }
+
+        .urgency-bar__number {
+            font-family: 'Lexend Deca', sans-serif;
+            font-weight: 700;
+            font-size: 1.1rem;
+            color: #000;
+        }
+
+        .urgency-bar__cta {
+            background: #000;
+            color: #EDF069;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-family: 'Lexend Deca', sans-serif;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .urgency-bar__cta:hover {
+            background: #222;
+            transform: scale(1.05);
+        }
+
+        /* Espaço para compensar a barra fixa */
+        .site-wrapper {
+            padding-top: 60px;
+        }
+
+        /* ========================================
+           ESTRUTURA PRINCIPAL (mantido/adaptado)
+           ======================================== */
+        .site-wrapper {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            min-height: var(--viewport-height);
+            overflow: hidden;
+            position: relative;
+            z-index: 2;
+        }
+
+        .site-main {
+            align-items: center;
+            display: flex;
+            flex-grow: 0;
+            flex-shrink: 0;
+            justify-content: center;
+            max-width: 100%;
+            position: relative;
+            text-align: center;
+            z-index: 1;
+            width: 100%;
+        }
+
+        .site-main > .inner {
+            max-width: 100%;
+            position: relative;
+            width: 100%;
+            z-index: 1;
+        }
+
+        /* ========================================
+           TIPOGRAFIA (mantido do original)
+           ======================================== */
+        .text-component {
+            position: relative;
+        }
+
+        .text-component span.p {
+            display: block;
+            position: relative;
+        }
+
+        /* Style 5 - Labels amarelos */
+        .text-component.style-5 {
+            text-transform: uppercase;
+            color: #EDF069;
+            font-family: 'Lexend Deca', sans-serif;
+            letter-spacing: 0.35rem;
+            font-size: 0.875em;
+            line-height: 1.875;
+            font-weight: 600;
+        }
+
+        /* Style 2 - Títulos brancos grandes */
+        .text-component.style-2 {
+            text-transform: uppercase;
+            color: #FFFFFF;
+            font-family: 'Lexend Deca', sans-serif;
+            letter-spacing: 0.35rem;
+            font-size: 2.875em;
+            line-height: 1.25;
+            font-weight: 600;
+        }
+
+        /* Style 7 - Texto claro centralizado */
+        .text-component.style-7 {
+            text-align: center;
+            color: rgba(255,250,250,0.71);
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.05rem;
+            font-size: 1em;
+            line-height: 2;
+            font-weight: 300;
+        }
+
+        .text-component.style-7 span.p:nth-child(n + 2) {
+            margin-top: 1rem;
+        }
+
+        /* Style 6 - Labels pretos */
+        .text-component.style-6 {
+            text-transform: uppercase;
+            color: #000000;
+            font-family: 'Lexend Deca', sans-serif;
+            letter-spacing: 0.35rem;
+            font-size: 0.875em;
+            line-height: 1.875;
+            font-weight: 600;
+        }
+
+        /* Style 4 - Títulos pretos grandes */
+        .text-component.style-4 {
+            text-transform: uppercase;
+            color: #000000;
+            font-family: 'Lexend Deca', sans-serif;
+            letter-spacing: 0.35rem;
+            font-size: 2.875em;
+            line-height: 1.625;
+            font-weight: 600;
+        }
+
+        /* Style 3 - Texto escuro */
+        .text-component.style-3 {
+            color: rgba(10,0,0,0.71);
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.05rem;
+            font-size: 1em;
+            line-height: 2;
+            font-weight: 300;
+        }
+
+        .text-component.style-3 span.p:nth-child(n + 2) {
+            margin-top: 1rem;
+        }
+
+        /* Style 8 - Texto pequeno claro */
+        .text-component.style-8 {
+            color: rgba(247,240,240,0.69);
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.05rem;
+            font-size: 0.75em;
+            line-height: 2;
+            font-weight: 300;
+        }
+
+        /* Style 1 - Texto pequeno escuro */
+        .text-component.style-1 {
+            color: rgba(5,0,0,0.69);
+            font-family: 'Inter', sans-serif;
+            letter-spacing: 0.05rem;
+            font-size: 0.75em;
+            line-height: 2;
+            font-weight: 300;
+        }
+
+        /* ========================================
+           CONTAINERS (mantido do original)
+           ======================================== */
+        .container-component {
+            position: relative;
+        }
+
+        .container-component > .wrapper {
+            position: relative;
+            max-width: 100%;
+        }
+
+        .container-component > .wrapper > .inner {
+            position: relative;
+            max-width: 100%;
+        }
+
+        /* Container escuro com imagem de fundo */
+        .container-component.style-1 {
+            display: flex;
+            width: 100%;
+            min-height: 49rem;
+            align-items: center;
+            justify-content: center;
+            background-attachment: fixed;
+            margin: 0 !important;
+        }
+
+        .container-component.style-1 > .wrapper {
+            max-width: 50rem;
+            width: 100%;
+        }
+
+        .container-component.style-1 > .wrapper > .inner {
+            padding: 6rem;
+        }
+
+        .container-component.style-1 > .wrapper > .inner > * {
+            margin-bottom: 1.5rem;
+        }
+
+        .container-component.style-1 > .wrapper > .inner > *:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Hero container */
+        .container-component.instance-11 {
+            background-image: 
+                url('data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cfilter%20id%3D%22noise%22%3E%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.875%22%20result%3D%22noise%22%20%2F%3E%20%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.12109375%200%22%20%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20filter%3D%22url%28%23noise%29%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22transparent%22%20opacity%3D%221%22%20%2F%3E%3C%2Fsvg%3E'), 
+                linear-gradient(to top, rgba(0,0,0,0.753), rgba(0,0,0,0.753)), 
+                url('assets/images/container11.jpg?v=268f29e7');
+            background-size: 512px, auto, cover;
+            background-position: center, 0% 0%, center;
+            background-repeat: repeat, repeat, no-repeat;
+        }
+
+        /* CTA container (final) */
+        .container-component.instance-2 {
+            background-image: 
+                url('data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cfilter%20id%3D%22noise%22%3E%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.875%22%20result%3D%22noise%22%20%2F%3E%20%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.12109375%200%22%20%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20filter%3D%22url%28%23noise%29%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22transparent%22%20opacity%3D%221%22%20%2F%3E%3C%2Fsvg%3E'), 
+                linear-gradient(to top, rgba(0,0,0,0.753), rgba(0,0,0,0.753)), 
+                url('assets/images/container02.jpg?v=268f29e7');
+            background-size: 512px, auto, cover;
+            background-position: center, 0% 0%, center;
+            background-repeat: repeat, repeat, no-repeat;
+        }
+
+        /* Container transparente simples */
+        .container-component.style-2 {
+            display: flex;
+            width: 100%;
+            min-height: 30rem;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            margin: 0 !important;
+        }
+
+        .container-component.style-2 > .wrapper {
+            max-width: 50rem;
+            width: 100%;
+        }
+
+        .container-component.style-2 > .wrapper > .inner {
+            padding: 6rem;
+        }
+
+        .container-component.style-2 > .wrapper > .inner > * {
+            margin-bottom: 1.5rem;
+        }
+
+        .container-component.style-2 > .wrapper > .inner > *:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Container 2 colunas transparente */
+        .container-component.style-3 {
+            display: flex;
+            width: 100%;
+            min-height: 48rem;
+            align-items: center;
+            justify-content: center;
+            background-color: transparent;
+            margin: 0 !important;
+        }
+
+        .container-component.style-3 > .wrapper {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .container-component.style-3 > .wrapper > .inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 6rem;
+        }
+
+        .container-component.style-3 > .wrapper > .inner > div {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding: 0 3rem;
+        }
+
+        .container-component.style-3 > .wrapper > .inner > div > * {
+            margin-bottom: 1.5rem;
+        }
+
+        .container-component.style-3 > .wrapper > .inner > div > *:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Container 2 colunas amarelo */
+        .container-component.style-4 {
+            display: flex;
+            width: 100%;
+            min-height: 48rem;
+            align-items: center;
+            justify-content: center;
+            background-color: #EDF069;
+            background-image: url('data:image/svg+xml;charset=utf8,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20preserveAspectRatio%3D%22none%22%3E%20%3Cstyle%3E%20line%20%7B%20stroke-linecap%3A%20square%3B%20stroke-width%3A%201.01px%3B%20stroke%3A%20rgba(0,0,0,0.078)%3B%20vector-effect%3A%20non-scaling-stroke%3B%20%7D%20%3C%2Fstyle%3E%20%3Cline%20x1%3D%22256%22%20y1%3D%220%22%20x2%3D%220%22%20y2%3D%22256%22%20%2F%3E%20%3Cline%20x1%3D%22256%22%20y1%3D%22512%22%20x2%3D%22512%22%20y2%3D%22256%22%20%2F%3E%3C%2Fsvg%3E');
+            background-size: 128px;
+            background-position: center;
+            background-repeat: repeat;
+            margin: 0 !important;
+        }
+
+        .container-component.style-4 > .wrapper {
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .container-component.style-4 > .wrapper > .inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            padding: 6rem;
+        }
+
+        .container-component.style-4 > .wrapper > .inner > div {
+            flex: 0 0 50%;
+            max-width: 50%;
+            padding: 0 3rem;
+        }
+
+        .container-component.style-4 > .wrapper > .inner > div > * {
+            margin-bottom: 1.5rem;
+        }
+
+        .container-component.style-4 > .wrapper > .inner > div > *:last-child {
+            margin-bottom: 0;
+        }
+
+        /* ========================================
+           IMAGENS (mantido do original)
+           ======================================== */
+        .image-component {
+            display: block;
+            line-height: 0;
+            max-width: 100%;
+            position: relative;
+        }
+
+        .image-component > .frame {
+            display: inline-block;
+            max-width: 100%;
+            overflow: hidden;
+            vertical-align: top;
+            width: 100%;
+        }
+
+        .image-component > .frame > img {
+            border-radius: 0 !important;
+            max-width: 100%;
+            vertical-align: top;
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .image-component.style-1 > .frame {
+            width: 100%;
+        }
+
+        /* ========================================
+           GALERIA (mantido do original)
+           ======================================== */
+        .gallery-component > .inner {
+            display: inline-block;
+            max-width: 100%;
+            width: 100%;
+        }
+
+        .gallery-component ul {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0;
+        }
+
+        .gallery-component ul > li {
+            position: relative;
+            flex: 1 1 33.333%;
+        }
+
+        .gallery-component ul > li > .thumbnail > .frame {
+            display: block;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .gallery-component ul > li > .thumbnail > .frame > img {
+            width: 100%;
+            height: 24.375rem;
+            object-fit: cover;
+            object-position: center;
+        }
+
+        .gallery-component ul > li > .caption {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: rgba(0,0,0,0.322);
+        }
+
+        .gallery-component ul > li > .caption > p {
+            text-transform: uppercase;
+            color: #FFFFFF;
+            font-family: 'Lexend Deca', sans-serif;
+            letter-spacing: 0.35rem;
+            font-size: 0.875em;
+            font-weight: 600;
+            padding: 1.5rem 2.5rem;
+        }
+
+        /* ========================================
+           BOTÕES CTA (NOVO - mantendo estilo original)
+           ======================================== */
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            background: #EDF069;
+            color: #000;
+            font-family: 'Lexend Deca', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            padding: 18px 40px;
+            border: none;
+            border-radius: 0;
+            cursor: pointer;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 2rem;
+        }
+
+        .cta-button:hover {
+            background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(237, 240, 105, 0.3);
+        }
+
+        .cta-button--secondary {
+            background: transparent;
+            color: #EDF069;
+            border: 2px solid #EDF069;
+        }
+
+        .cta-button--secondary:hover {
+            background: #EDF069;
+            color: #000;
+        }
+
+        .cta-button--dark {
+            background: #000;
+            color: #EDF069;
+        }
+
+        .cta-button--dark:hover {
+            background: #222;
+        }
+
+        /* Wrapper para CTAs */
+        .cta-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        /* ========================================
+           BOTÃO FLUTUANTE WHATSAPP (NOVO)
+           ======================================== */
+        .floating-cta {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 9998;
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: #25D366;
+            color: #fff;
+            padding: 15px 25px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-family: 'Lexend Deca', sans-serif;
+            font-weight: 600;
+            font-size: 0.9rem;
+            box-shadow: 0 5px 30px rgba(37, 211, 102, 0.4);
+            transition: all 0.3s ease;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .floating-cta:hover {
+            transform: scale(1.05);
+            box-shadow: 0 8px 40px rgba(37, 211, 102, 0.5);
+        }
+
+        .floating-cta svg {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-5px); }
+        }
+
+        /* ========================================
+           SEÇÃO DE PREÇOS (NOVO/EDITADO)
+           ======================================== */
+        .pricing-section {
+            padding: 6rem 2rem;
+            background: transparent;
+        }
+
+        .pricing-section__header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .pricing-card {
+            background: rgba(255,255,255,0.03);
+            border: 1px solid rgba(237, 240, 105, 0.2);
+            border-radius: 0;
+            padding: 3rem;
+            max-width: 600px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .pricing-card__badge {
+            display: inline-block;
+            background: #EDF069;
+            color: #000;
+            font-family: 'Lexend Deca', sans-serif;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 0.15em;
+            padding: 8px 20px;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-card__main-price {
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-card__currency {
+            font-family: 'Lexend Deca', sans-serif;
+            font-size: 1.5rem;
+            color: #EDF069;
+            vertical-align: super;
+        }
+
+        .pricing-card__amount {
+            font-family: 'Lexend Deca', sans-serif;
+            font-size: 4rem;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .pricing-card__period {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            margin-top: 0.5rem;
+        }
+
+        .pricing-card__divider {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 2rem 0;
+            color: rgba(255,255,255,0.4);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+        }
+
+        .pricing-card__divider::before,
+        .pricing-card__divider::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255,255,255,0.1);
+        }
+
+        .pricing-card__brl {
+            margin-bottom: 1.5rem;
+        }
+
+        .pricing-card__brl-label {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.6);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card__brl-amount {
+            font-family: 'Lexend Deca', sans-serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .pricing-card__installments {
+            background: rgba(237, 240, 105, 0.1);
+            border: 1px dashed rgba(237, 240, 105, 0.3);
+            padding: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .pricing-card__installments-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .pricing-card__installments-highlight {
+            font-family: 'Lexend Deca', sans-serif;
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #EDF069;
+            display: block;
+            margin-top: 0.5rem;
+        }
+
+        .pricing-card__includes {
+            text-align: left;
+            margin: 2rem 0;
+            padding: 1.5rem;
+            background: rgba(255,255,255,0.02);
+        }
+
+        .pricing-card__includes-title {
+            font-family: 'Lexend Deca', sans-serif;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: #EDF069;
+            margin-bottom: 1rem;
+        }
+
+        .pricing-card__includes-list {
+            list-style: none;
+        }
+
+        .pricing-card__includes-list li {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.95rem;
+            color: rgba(255,255,255,0.7);
+            padding: 0.5rem 0;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .pricing-card__includes-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #EDF069;
+            font-weight: bold;
+        }
+
+        .pricing-card__reserve {
+            background: rgba(255,255,255,0.05);
+            padding: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .pricing-card__reserve-text {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.9rem;
+            color: rgba(255,255,255,0.7);
+            margin-bottom: 0.5rem;
+        }
+
+        .pricing-card__reserve-amount {
+            font-family: 'Lexend Deca', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .pricing-card__note {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: rgba(255,255,255,0.5);
+            margin-top: 1.5rem;
+            font-style: italic;
+        }
+
+        /* ========================================
+           SEÇÃO DO CONDUTOR (EDITADO/EXPANDIDO)
+           ======================================== */
+        .conductor-section {
+            padding: 6rem 2rem;
+        }
+
+        .conductor-section > .wrapper {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .conductor-section > .wrapper > .inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4rem;
+        }
+
+        .conductor-section__image {
+            flex: 0 0 400px;
+            max-width: 100%;
+        }
+
+        .conductor-section__photo {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .conductor-section__content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .conductor-section__label {
+            text-transform: uppercase;
+            color: #EDF069;
+            font-family: 'Lexend Deca', sans-serif;
+            letter-spacing: 0.35rem;
+            font-size: 0.875em;
+            line-height: 1.875;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .conductor-section__title {
+            text-transform: uppercase;
+            color: #FFFFFF;
+            font-family: 'Lexend Deca', sans-serif;
+            letter-spacing: 0.2rem;
+            font-size: 2.5em;
+            line-height: 1.25;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .conductor-section__bio {
+            color: rgba(255,250,250,0.71);
+            font-family: 'Inter', sans-serif;
+            font-size: 1em;
+            line-height: 2;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .conductor-section__bio p {
+            margin-bottom: 1rem;
+        }
+
+        .conductor-section__credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .conductor-section__credential {
+            background: rgba(237, 240, 105, 0.1);
+            border: 1px solid rgba(237, 240, 105, 0.2);
+            padding: 0.75rem 1.25rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        /* ========================================
+           SEÇÃO FAQ (NOVO)
+           ======================================== */
+        .faq-section {
+            padding: 6rem 2rem;
+            background: transparent;
+        }
+
+        .faq-section__header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .faq-container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .faq-item {
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            margin-bottom: 0;
+        }
+
+        .faq-item:last-child {
+            border-bottom: none;
+        }
+
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.5rem 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            text-align: left;
+        }
+
+        .faq-question__text {
+            font-family: 'Lexend Deca', sans-serif;
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: #fff;
+            padding-right: 2rem;
+        }
+
+        .faq-question__icon {
+            width: 24px;
+            height: 24px;
+            position: relative;
+            flex-shrink: 0;
+        }
+
+        .faq-question__icon::before,
+        .faq-question__icon::after {
+            content: '';
+            position: absolute;
+            background: #EDF069;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question__icon::before {
+            width: 100%;
+            height: 2px;
+            top: 50%;
+            left: 0;
+            transform: translateY(-50%);
+        }
+
+        .faq-question__icon::after {
+            width: 2px;
+            height: 100%;
+            left: 50%;
+            top: 0;
+            transform: translateX(-50%);
+        }
+
+        .faq-item.active .faq-question__icon::after {
+            transform: translateX(-50%) rotate(90deg);
+            opacity: 0;
+        }
+
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding-bottom: 1.5rem;
+        }
+
+        .faq-answer__text {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(255,255,255,0.7);
+        }
+
+        /* ========================================
+           MODAL DE CAPTURA (NOVO)
+           ======================================== */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0,0,0,0.9);
+            z-index: 10000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .modal-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .modal {
+            background: #1a1a1b;
+            max-width: 500px;
+            width: 100%;
+            padding: 3rem;
+            position: relative;
+            transform: translateY(20px);
+            transition: transform 0.3s ease;
+        }
+
+        .modal-overlay.active .modal {
+            transform: translateY(0);
+        }
+
+        .modal__close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            width: 40px;
+            height: 40px;
+            background: none;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal__close::before,
+        .modal__close::after {
+            content: '';
+            position: absolute;
+            width: 20px;
+            height: 2px;
+            background: rgba(255,255,255,0.5);
+            transition: background 0.3s ease;
+        }
+
+        .modal__close::before { transform: rotate(45deg); }
+        .modal__close::after { transform: rotate(-45deg); }
+
+        .modal__close:hover::before,
+        .modal__close:hover::after {
+            background: #EDF069;
+        }
+
+        .modal__icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(237, 240, 105, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+        }
+
+        .modal__icon svg {
+            width: 30px;
+            height: 30px;
+            fill: #EDF069;
+        }
+
+        .modal__title {
+            font-family: 'Lexend Deca', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+            text-align: center;
+            margin-bottom: 0.5rem;
+        }
+
+        .modal__subtitle {
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.6);
+            text-align: center;
+            margin-bottom: 2rem;
+        }
+
+        .modal__form {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+        }
+
+        .modal__input {
+            width: 100%;
+            padding: 1rem;
+            background: rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
+            color: #fff;
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+        }
+
+        .modal__input::placeholder {
+            color: rgba(255,255,255,0.4);
+        }
+
+        .modal__input:focus {
+            outline: none;
+            border-color: #EDF069;
+            background: rgba(237, 240, 105, 0.05);
+        }
+
+        .modal__submit {
+            width: 100%;
+            padding: 1rem;
+            background: #EDF069;
+            color: #000;
+            border: none;
+            font-family: 'Lexend Deca', sans-serif;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .modal__submit:hover {
+            background: #fff;
+        }
+
+        .modal__privacy {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            color: rgba(255,255,255,0.4);
+            text-align: center;
+            margin-top: 1rem;
+        }
+
+        /* ========================================
+           LINKS (mantido do original)
+           ======================================== */
+        .links-component {
+            display: flex;
+            justify-content: center;
+            gap: 1.25rem;
+            flex-wrap: wrap;
+            margin-top: 2rem;
+        }
+
+        .links-component > li > a {
+            font-family: 'Lexend Deca', sans-serif;
+            letter-spacing: 0.05rem;
+            font-size: 1.5em;
+            font-weight: 600;
+            color: #EDF069;
+            text-decoration: none;
+        }
+
+        .links-component > li > a:hover {
+            text-decoration: underline;
+        }
+
+        /* ========================================
+           RESPONSIVO
+           ======================================== */
+        @media (max-width: 1680px) {
+            html { font-size: 13pt; }
+        }
+
+        @media (max-width: 1280px) {
+            html { font-size: 13pt; }
+            
+            .container-component.style-1 {
+                background-attachment: scroll;
+            }
+        }
+
+        @media (max-width: 980px) {
+            html { font-size: 11pt; }
+        }
+
+        @media (max-width: 736px) {
+            html { font-size: 12pt; }
+            
+            .urgency-bar {
+                flex-direction: column;
+                gap: 10px;
+                padding: 10px 15px;
+            }
+            
+            .urgency-bar__text {
+                font-size: 0.75rem;
+            }
+            
+            .site-wrapper {
+                padding-top: 100px;
+            }
+            
+            .container-component.style-1 > .wrapper > .inner,
+            .container-component.style-2 > .wrapper > .inner {
+                padding: 3.5rem 2rem;
+            }
+            
+            .container-component.style-3 > .wrapper > .inner,
+            .container-component.style-4 > .wrapper > .inner {
+                flex-direction: column;
+                padding: 3.5rem 2rem;
+            }
+            
+            .container-component.style-3 > .wrapper > .inner > div,
+            .container-component.style-4 > .wrapper > .inner > div {
+                flex: 0 0 100%;
+                max-width: 100%;
+                padding: 2rem 0;
+            }
+            
+            .text-component.style-2,
+            .text-component.style-4 {
+                font-size: 2em;
+            }
+            
+            .gallery-component ul {
+                flex-direction: column;
+            }
+            
+            .gallery-component ul > li {
+                flex: 0 0 100%;
+            }
+            
+            .gallery-component ul > li > .thumbnail > .frame > img {
+                height: auto;
+            }
+            
+            .floating-cta {
+                bottom: 20px;
+                right: 20px;
+                padding: 12px 20px;
+                font-size: 0.8rem;
+            }
+            
+            .floating-cta span {
+                display: none;
+            }
+            
+            .floating-cta {
+                padding: 15px;
+                border-radius: 50%;
+            }
+            
+            .pricing-card {
+                padding: 2rem;
+            }
+            
+            .pricing-card__amount {
+                font-size: 3rem;
+            }
+            
+            .conductor-section > .wrapper > .inner {
+                flex-direction: column;
+            }
+            
+            .conductor-section__image {
+                flex: 0 0 100%;
+                max-width: 300px;
+                margin: 0 auto;
+            }
+            
+            .modal {
+                padding: 2rem;
+            }
+            
+            .cta-button {
+                padding: 15px 30px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .pricing-card__amount {
+                font-size: 2.5rem;
+            }
+            
+            .faq-question__text {
+                font-size: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- BARRA DE URGÊNCIA (NOVO) -->
+    <div class="urgency-bar">
+        <span class="urgency-bar__text">Vagas Limitadas</span>
+        <div class="urgency-bar__counter">
+            <span class="urgency-bar__pulse"></span>
+            <span class="urgency-bar__number">Restam apenas <strong id="vagas-count">8</strong> vagas</span>
+        </div>
+        <a href="#reservar" class="urgency-bar__cta">Garantir Minha Vaga</a>
+    </div>
+
+    <div class="site-wrapper">
+        <div class="site-main">
+            <div class="inner">
+                
+                <!-- ========================================
+                     HERO (mantido + CTA adicionado)
+                     ======================================== -->
+                <div id="container11" class="container-component instance-11 style-1">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <p class="text-component style-5">movimento · natureza · conexão</p>
+                            <h1 class="text-component style-2">MUVYOGA EXPERIENCE MÁNCORA</h1>
+                            <p class="text-component style-7">
+                                <span class="p">Uma semana para voltar ao corpo e ao essencial.</span>
+                                <span class="p">Imersão internacional criada para restaurar vitalidade, presença e conexão por meio de práticas conscientes, rituais integrativos e protocolos que expandem a percepção e autonomia.</span>
+                            </p>
+                            <div class="cta-wrapper">
+                                <a href="#reservar" class="cta-button">Quero Participar</a>
+                                <a href="#experiencia" class="cta-button cta-button--secondary">Saber Mais</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     A EXPERIÊNCIA (mantido)
+                     ======================================== -->
+                <div id="experiencia" class="container-component style-2">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <p class="text-component style-5">movimento · natureza · conexão</p>
+                            <h2 class="text-component style-2">A Experiência</h2>
+                            <p class="text-component style-7">
+                                <span class="p">Sete noites para sair do ruído e retornar ao essencial.</span>
+                                <span class="p">O MuvYoga Experience é uma imersão internacional que integra práticas diárias de movimento consciente, respiração, rituais de integração, silêncio, natureza e descanso real.</span>
+                                <span class="p">Um encontro intimista, em um ambiente à beira-mar, que cria o espaço ideal para aprofundar na prática, expandir a percepção e potencializar a vitalidade.</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     OS PILARES (mantido)
+                     ======================================== -->
+                <div class="container-component style-3">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <div>
+                                <p class="text-component style-5">mover · nutrir · contemplar · conectar</p>
+                                <h2 class="text-component style-2">Os Pilares</h2>
+                                <p class="text-component style-7">
+                                    <span class="p">Movimento como medicina<br>
+                                    Nutrição como fonte de vida<br>
+                                    Descanso e regeneração<br>
+                                    Natureza como mestra</span>
+                                </p>
+                            </div>
+                            <div>
+                                <div class="image-component style-1">
+                                    <span class="frame">
+                                        <img src="assets/images/image02.jpg?v=268f29e7" alt="Os Pilares do MuvYoga" />
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     O LUGAR (mantido - fundo amarelo)
+                     ======================================== -->
+                <div class="container-component style-4">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <div>
+                                <div class="image-component style-1">
+                                    <span class="frame">
+                                        <img src="assets/images/image03.jpg?v=268f29e7" alt="Máncora, Peru" />
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-component style-6">mar · sol · vento</p>
+                                <h2 class="text-component style-4">O Lugar</h2>
+                                <p class="text-component style-3">
+                                    <span class="p">Uma pousada boutique em Máncora, uma das praias mais preservadas do norte do Peru.</span>
+                                    <span class="p">Um ambiente simples, vivo e confortável, onde mar, sol e vento criam o cenário ideal para desacelerar e retornar ao essencial.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     DATA & DURAÇÃO (mantido)
+                     ======================================== -->
+                <div class="container-component style-3">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <div>
+                                <p class="text-component style-5">uma semana fora do ruído</p>
+                                <h2 class="text-component style-2">Data &amp; Duração</h2>
+                                <p class="text-component style-7">
+                                    <span class="p">12 a 19 de maio de 2026<br>Máncora, Peru</span>
+                                    <span class="p">Sete noites e oito dias de imersão completa.</span>
+                                    <span class="p">Tempo real para restaurar vitalidade e retornar ao corpo em um ambiente natural, simples e vivo.</span>
+                                </p>
+                                <a href="#reservar" class="cta-button">Reservar Minha Vaga</a>
+                            </div>
+                            <div>
+                                <div class="image-component style-1">
+                                    <span class="frame">
+                                        <img src="assets/images/image04.jpg?v=268f29e7" alt="Máncora" />
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     PRA QUEM É (mantido - fundo amarelo)
+                     ======================================== -->
+                <div class="container-component style-4">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <div>
+                                <div class="image-component style-1">
+                                    <span class="frame">
+                                        <img src="assets/images/image01.jpg?v=268f29e7" alt="Para quem é" />
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-component style-6">se esse chamado ressoa</p>
+                                <h2 class="text-component style-4">Pra Quem É</h2>
+                                <p class="text-component style-3">
+                                    <span class="p">Para quem sente que chegou a hora de desacelerar de verdade e permitir que o corpo volte ao seu estado natural.</span>
+                                    <span class="p">Para quem busca reconectar movimento, respiração e presença — não como técnica isolada, mas como linguagem do próprio organismo.</span>
+                                    <span class="p">Para quem deseja uma prática estruturada, que desenvolve força, flexibilidade, coordenação e percepção. Sem abrir mão de tempo real de descanso e integração.</span>
+                                    <span class="p">Não é necessário ter experiência prévia. A imersão é adaptada a diferentes corpos e níveis, respeitando ritmo, limites e história de cada participante.</span>
+                                    <span class="p">Um convite para quem deseja recuperar suas capacidades humanas essenciais e lembrar o que o corpo já sabe.</span>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     O QUE ESTÁ INCLUÍDO - Parte 1 (mantido)
+                     ======================================== -->
+                <div class="container-component style-2">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <p class="text-component style-5">tudo o que você precisa</p>
+                            <h2 class="text-component style-2">O Que Está Incluído</h2>
+                            <p class="text-component style-7">
+                                <span class="p">• 7 noites de hospedagem boutique<br>
+                                • Alimentação completa<br>
+                                • Práticas diárias de MuvYoga</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GALERIA 1 (mantido) -->
+                <div class="gallery-component style-1">
+                    <div class="inner">
+                        <ul>
+                            <li>
+                                <span class="thumbnail">
+                                    <span class="frame">
+                                        <img src="assets/images/gallery01/d1dcd56b.jpg?v=268f29e7" alt="Hospedagem" />
+                                    </span>
+                                </span>
+                                <div class="caption"><p>Hospedagem</p></div>
+                            </li>
+                            <li>
+                                <span class="thumbnail">
+                                    <span class="frame">
+                                        <img src="assets/images/gallery01/ea7ca342.jpg?v=268f29e7" alt="Alimentação" />
+                                    </span>
+                                </span>
+                                <div class="caption"><p>Alimentação</p></div>
+                            </li>
+                            <li>
+                                <span class="thumbnail">
+                                    <span class="frame">
+                                        <img src="assets/images/gallery01/ccfa2e1e.jpg?v=268f29e7" alt="Movimento" />
+                                    </span>
+                                </span>
+                                <div class="caption"><p>Movimento</p></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     O QUE ESTÁ INCLUÍDO - Parte 2 (mantido)
+                     ======================================== -->
+                <div class="container-component style-2">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <p class="text-component style-5">tudo o que você precisa</p>
+                            <h2 class="text-component style-2">O Que Está Incluído</h2>
+                            <p class="text-component style-7">
+                                <span class="p">• Rituais de respiração e integração<br>
+                                • Espaços de silêncio e descanso<br>
+                                • Curadoria integral da experiência</span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- GALERIA 2 (mantido) -->
+                <div class="gallery-component style-1">
+                    <div class="inner">
+                        <ul>
+                            <li>
+                                <span class="thumbnail">
+                                    <span class="frame">
+                                        <img src="assets/images/gallery02/2a16bbe2.jpg?v=268f29e7" alt="Integração" />
+                                    </span>
+                                </span>
+                                <div class="caption"><p>Integração</p></div>
+                            </li>
+                            <li>
+                                <span class="thumbnail">
+                                    <span class="frame">
+                                        <img src="assets/images/gallery02/a0556f4b.jpg?v=268f29e7" alt="Natureza" />
+                                    </span>
+                                </span>
+                                <div class="caption"><p>Natureza</p></div>
+                            </li>
+                            <li>
+                                <span class="thumbnail">
+                                    <span class="frame">
+                                        <img src="assets/images/gallery02/d55327f6.jpg?v=268f29e7" alt="Ambiente" />
+                                    </span>
+                                </span>
+                                <div class="caption"><p>Ambiente</p></div>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     O QUE NÃO ESTÁ INCLUÍDO (mantido)
+                     ======================================== -->
+                <div class="container-component style-2">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <p class="text-component style-5">clareza e transparência</p>
+                            <h2 class="text-component style-2">O Que Não Está Incluído</h2>
+                            <p class="text-component style-7">
+                                <span class="p">• Logística aérea e terrestre<br>
+                                • Seguro-viagem<br>
+                                • Despesas pessoais extras<br>
+                                • Atividades realizadas por facilitadores locais</span>
+                            </p>
+                            <p class="text-component style-8">Toda a orientação logística será enviada após a confirmação da vaga.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     INVESTIMENTO (EDITADO - com preços completos)
+                     ======================================== -->
+                <div id="reservar" class="container-component style-4">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <div>
+                                <div class="image-component style-1">
+                                    <span class="frame">
+                                        <img src="assets/images/image05.jpg?v=268f29e7" alt="Investimento" />
+                                    </span>
+                                </div>
+                            </div>
+                            <div>
+                                <p class="text-component style-6">invista em você</p>
+                                <h2 class="text-component style-4">Investimento</h2>
+                                
+                                <div class="pricing-card" style="background: rgba(0,0,0,0.2); border-color: rgba(0,0,0,0.2);">
+                                    <div class="pricing-card__badge">Valor da Imersão Completa</div>
+                                    
+                                    <div class="pricing-card__main-price">
+                                        <span class="pricing-card__currency" style="color: #000;">USD</span>
+                                        <span class="pricing-card__amount" style="color: #000;">1.020</span>
+                                        <div class="pricing-card__period" style="color: rgba(0,0,0,0.6);">por participante</div>
+                                    </div>
+                                    
+                                    <div class="pricing-card__divider" style="color: rgba(0,0,0,0.4);">
+                                        ou em reais
+                                    </div>
+                                    
+                                    <div class="pricing-card__brl">
+                                        <div class="pricing-card__brl-label" style="color: rgba(0,0,0,0.6);">Aproximadamente</div>
+                                        <div class="pricing-card__brl-amount" style="color: #000;">R$ 5.916</div>
+                                    </div>
+                                    
+                                    <div class="pricing-card__installments" style="background: rgba(0,0,0,0.1); border-color: rgba(0,0,0,0.2);">
+                                        <span class="pricing-card__installments-text" style="color: rgba(0,0,0,0.7);">Ou parcele em até</span>
+                                        <span class="pricing-card__installments-highlight" style="color: #000;">12x de R$ 493</span>
+                                    </div>
+                                    
+                                    <div class="pricing-card__includes" style="background: rgba(0,0,0,0.1);">
+                                        <div class="pricing-card__includes-title" style="color: #000;">O que está incluído:</div>
+                                        <ul class="pricing-card__includes-list">
+                                            <li style="color: rgba(0,0,0,0.7);">7 noites de hospedagem boutique</li>
+                                            <li style="color: rgba(0,0,0,0.7);">Alimentação completa</li>
+                                            <li style="color: rgba(0,0,0,0.7);">Práticas diárias de MuvYoga</li>
+                                            <li style="color: rgba(0,0,0,0.7);">Rituais de respiração e integração</li>
+                                            <li style="color: rgba(0,0,0,0.7);">Curadoria integral da experiência</li>
+                                        </ul>
+                                    </div>
+                                    
+                                    <div class="pricing-card__reserve" style="background: rgba(0,0,0,0.15);">
+                                        <div class="pricing-card__reserve-text" style="color: rgba(0,0,0,0.6);">Reserva de vaga (sinal)</div>
+                                        <div class="pricing-card__reserve-amount" style="color: #000;">USD 300 <small style="font-size: 0.6em; opacity: 0.7;">(~R$ 1.740)</small></div>
+                                    </div>
+                                    
+                                    <a href="https://wa.me/5511943421151?text=Olá,%20tenho%20interesse%20no%20MuvYoga%20Experience%20e%20quero%20reservar%20minha%20vaga." class="cta-button cta-button--dark" style="width: 100%; margin-top: 1.5rem;">
+                                        Reservar Minha Vaga
+                                    </a>
+                                    
+                                    <p class="pricing-card__note" style="color: rgba(0,0,0,0.5);">
+                                        Saldo restante até 30 dias antes do início da imersão.<br>
+                                        Grupo mínimo: 8 participantes · Máximo: 12 participantes<br>
+                                        Caso o grupo mínimo não seja formado, o valor do sinal é integralmente devolvido.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     CONDUTOR (EDITADO - Expandido com foto)
+                     ======================================== -->
+                <div class="conductor-section">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <div class="conductor-section__image">
+                                <img src="https://i.postimg.cc/qB6cGKFk/491433564-18507533578051265-1036449777796320103-n.jpg" alt="Ricardo Barbato" class="conductor-section__photo" />
+                            </div>
+                            <div class="conductor-section__content">
+                                <p class="conductor-section__label">Tradição e Inovação</p>
+                                <h2 class="conductor-section__title">Ricardo Barbato</h2>
+                                <div class="conductor-section__bio">
+                                    <p>Criador do método MuvYoga — uma abordagem autoral que integra força, flexibilidade, agilidade e coordenação, sustentadas por respiração, presença e a tradição do yoga, em linguagem contemporânea aplicada à vida real.</p>
+                                    <p>Com mais de 15 anos de prática e estudo em movimento consciente, Ricardo desenvolveu um sistema que respeita a sabedoria do corpo enquanto desafia seus limites de forma segura e progressiva.</p>
+                                    <p>Sua condução é marcada por acompanhamento próximo, humano e presente — criando um espaço onde cada participante pode explorar suas capacidades em seu próprio ritmo.</p>
+                                </div>
+                                <div class="conductor-section__credentials">
+                                    <span class="conductor-section__credential">+15 anos de prática</span>
+                                    <span class="conductor-section__credential">Criador do MuvYoga</span>
+                                    <span class="conductor-section__credential">Formação em Yoga Tradicional</span>
+                                    <span class="conductor-section__credential">Especialista em Movimento</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- ========================================
+                     FAQ (NOVO)
+                     ======================================== -->
+                <section class="faq-section">
+                    <div class="faq-section__header">
+                        <p class="text-component style-5">tire suas dúvidas</p>
+                        <h2 class="text-component style-2">Perguntas Frequentes</h2>
+                    </div>
+                    
+                    <div class="faq-container">
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="faq-question__text">Preciso ter experiência com yoga para participar?</span>
+                                <span class="faq-question__icon"></span>
+                            </button>
+                            <div class="faq-answer">
+                                <p class="faq-answer__text">Não é necessário ter experiência prévia. A imersão é adaptada a diferentes corpos e níveis, respeitando ritmo, limites e história de cada participante. O método MuvYoga foi desenvolvido para ser acessível a iniciantes enquanto oferece profundidade para praticantes experientes.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="faq-question__text">Como funciona a hospedagem?</span>
+                                <span class="faq-question__icon"></span>
+                            </button>
+                            <div class="faq-answer">
+                                <p class="faq-answer__text">Você ficará hospedado em uma pousada boutique à beira-mar em Máncora, Peru. A acomodação é em quartos compartilhados (duplos ou triplos) confortáveis e bem equipados. Se preferir quarto individual, consulte disponibilidade e valor adicional.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="faq-question__text">O que inclui a alimentação?</span>
+                                <span class="faq-question__icon"></span>
+                            </button>
+                            <div class="faq-answer">
+                                <p class="faq-answer__text">A alimentação é completa: café da manhã, almoço e jantar, com opções nutritivas e saborosas. Restrições alimentares e preferências podem ser acomodadas com aviso prévio. A culinária local peruana é uma das mais ricas da América do Sul.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="faq-question__text">Como é a rotina durante a imersão?</span>
+                                <span class="faq-question__icon"></span>
+                            </button>
+                            <div class="faq-answer">
+                                <p class="faq-answer__text">A rotina inclui práticas matinais de movimento, momentos de integração e rituais de respiração, tempo livre para descanso e conexão com a natureza, e práticas ao entardecer. Há espaço para silêncio e também para trocas em grupo. A programação equilibra estrutura e liberdade.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="faq-question__text">Como chego até Máncora?</span>
+                                <span class="faq-question__icon"></span>
+                            </button>
+                            <div class="faq-answer">
+                                <p class="faq-answer__text">Você pode voar até Lima (Peru) e de lá pegar um voo doméstico até Piura ou Tumbes. De qualquer uma dessas cidades, são cerca de 2-3 horas de carro até Máncora. Toda a orientação logística detalhada será enviada após a confirmação da sua vaga.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="faq-question__text">E se o grupo mínimo não for formado?</span>
+                                <span class="faq-question__icon"></span>
+                            </button>
+                            <div class="faq-answer">
+                                <p class="faq-answer__text">Se o grupo mínimo de 8 participantes não for alcançado, o valor do sinal (USD 300) é integralmente devolvido. Você não corre risco financeiro ao reservar sua vaga.</p>
+                            </div>
+                        </div>
+                        
+                        <div class="faq-item">
+                            <button class="faq-question">
+                                <span class="faq-question__text">Posso parcelar o pagamento?</span>
+                                <span class="faq-question__icon"></span>
+                            </button>
+                            <div class="faq-answer">
+                                <p class="faq-answer__text">Sim! Você pode parcelar em até 12x no cartão de crédito. O sinal de USD 300 (ou R$ 1.740) é pago no ato da reserva, e o saldo restante pode ser parcelado ou pago até 30 dias antes do início da imersão.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- ========================================
+                     CTA FINAL (mantido + melhorado)
+                     ======================================== -->
+                <div class="container-component instance-2 style-1">
+                    <div class="wrapper">
+                        <div class="inner">
+                            <p class="text-component style-5">pronto para viver essa experiência?</p>
+                            <h2 class="text-component style-2">Se Permita</h2>
+                            <p class="text-component style-7">
+                                <span class="p">As vagas são limitadas a um grupo intimista de 12 pessoas.</span>
+                                <span class="p">Se sentir que este chamado é para você, entre em contato para garantir sua vaga ou tirar dúvidas.</span>
+                            </p>
+                            <div class="cta-wrapper">
+                                <a href="https://wa.me/5511943421151?text=Olá,%20tenho%20interesse%20no%20MuvYoga%20Experience%20e%20quero%20reservar%20minha%20vaga." class="cta-button">
+                                    Falar com Ricardo
+                                </a>
+                                <button onclick="openModal()" class="cta-button cta-button--secondary">
+                                    Receber Informações
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+
+    <!-- ========================================
+         BOTÃO FLUTUANTE WHATSAPP (NOVO)
+         ======================================== -->
+    <a href="https://wa.me/5511943421151?text=Olá,%20tenho%20interesse%20no%20MuvYoga%20Experience." class="floating-cta" target="_blank">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+        <span>Fale Conosco</span>
+    </a>
+
+    <!-- ========================================
+         MODAL DE CAPTURA (NOVO)
+         ======================================== -->
+    <div class="modal-overlay" id="captureModal">
+        <div class="modal">
+            <button class="modal__close" onclick="closeModal()"></button>
+            
+            <div class="modal__icon">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M20 4H4c-1.1 0-1.99.9-1.99 2L2 18c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2zm0 4l-8 5-8-5V6l8 5 8-5v2z"/>
+                </svg>
+            </div>
+            
+            <h3 class="modal__title">Receba Informações Completas</h3>
+            <p class="modal__subtitle">Deixe seu contato e enviaremos todos os detalhes da imersão</p>
+            
+            <form class="modal__form" id="captureForm">
+                <input type="text" class="modal__input" placeholder="Seu nome" required />
+                <input type="email" class="modal__input" placeholder="Seu melhor e-mail" required />
+                <input type="tel" class="modal__input" placeholder="WhatsApp (com DDD)" required />
+                <button type="submit" class="modal__submit">Quero Receber</button>
+            </form>
+            
+            <p class="modal__privacy">🔒 Seus dados estão seguros. Não fazemos spam.</p>
+        </div>
+    </div>
+
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(button => {
+            button.addEventListener('click', () => {
+                const item = button.parentElement;
+                const isActive = item.classList.contains('active');
+                
+                // Fecha todos
+                document.querySelectorAll('.faq-item').forEach(i => {
+                    i.classList.remove('active');
+                });
+                
+                // Abre o clicado (se não estava ativo)
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        });
+
+        // Modal functions
+        function openModal() {
+            document.getElementById('captureModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            document.getElementById('captureModal').classList.remove('active');
+            document.body.style.overflow = '';
+        }
+
+        // Fechar modal clicando fora
+        document.getElementById('captureModal').addEventListener('click', (e) => {
+            if (e.target === e.currentTarget) {
+                closeModal();
+            }
+        });
+
+        // Fechar com ESC
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // Form submit
+        document.getElementById('captureForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            // Aqui você integraria com seu sistema de email/CRM
+            alert('Obrigado! Entraremos em contato em breve.');
+            closeModal();
+        });
+
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
