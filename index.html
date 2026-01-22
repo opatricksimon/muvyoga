@@ -44,6 +44,10 @@
             --dark-bg: #131314;
             --text-light: #FFFFFF;
             --text-dark: #000000;
+            --padding-horizontal: 6rem;
+            --padding-vertical: 6rem;
+            --spacing: 1.5rem;
+            --width: 50rem;
         }
 
         html {
@@ -89,88 +93,80 @@
         }
 
         /* ========================================
-           BARRA DE URGÊNCIA
+           NOTIFICAÇÃO DE VAGAS - SUTIL E ELEGANTE
            ======================================== */
-        .urgency-bar {
+        .vagas-notification {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(135deg, #EDF069 0%, #d4d85e 100%);
-            padding: 12px 20px;
+            top: 20px;
+            left: 50%;
+            transform: translateX(-50%);
             z-index: 9999;
             display: flex;
             align-items: center;
-            justify-content: center;
-            gap: 15px;
-            flex-wrap: wrap;
-            box-shadow: 0 2px 20px rgba(237, 240, 105, 0.3);
-        }
-
-        .urgency-bar__text {
-            font-family: 'Lexend Deca', sans-serif;
-            font-weight: 600;
-            font-size: 0.85rem;
-            color: #000;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-        }
-
-        .urgency-bar__counter {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            background: rgba(0,0,0,0.15);
-            padding: 6px 16px;
-            border-radius: 30px;
-        }
-
-        .urgency-bar__pulse {
-            width: 10px;
-            height: 10px;
-            background: #ff4444;
-            border-radius: 50%;
-            animation: pulse 1.5s infinite;
-        }
-
-        @keyframes pulse {
-            0%, 100% { transform: scale(1); opacity: 1; }
-            50% { transform: scale(1.3); opacity: 0.7; }
-        }
-
-        .urgency-bar__number {
-            font-family: 'Lexend Deca', sans-serif;
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: #000;
-        }
-
-        .urgency-bar__cta {
-            background: #000;
-            color: #EDF069;
-            padding: 8px 20px;
-            border-radius: 30px;
-            font-family: 'Lexend Deca', sans-serif;
-            font-weight: 600;
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            text-decoration: none;
-            border: none;
+            gap: 10px;
+            background: rgba(19, 19, 20, 0.85);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            border: 1px solid rgba(237, 240, 105, 0.2);
+            padding: 10px 20px;
+            border-radius: 50px;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
+            animation: notificationGlow 3s ease-in-out infinite;
         }
 
-        .urgency-bar__cta:hover {
-            background: #222;
-            transform: scale(1.05);
+        .vagas-notification:hover {
+            background: rgba(237, 240, 105, 0.15);
+            border-color: rgba(237, 240, 105, 0.4);
+            transform: translateX(-50%) scale(1.02);
+        }
+
+        @keyframes notificationGlow {
+            0%, 100% { 
+                box-shadow: 0 0 20px rgba(237, 240, 105, 0.1);
+            }
+            50% { 
+                box-shadow: 0 0 30px rgba(237, 240, 105, 0.25);
+            }
+        }
+
+        .vagas-notification__dot {
+            width: 8px;
+            height: 8px;
+            background: #EDF069;
+            border-radius: 50%;
+            animation: dotPulse 2s ease-in-out infinite;
+        }
+
+        @keyframes dotPulse {
+            0%, 100% { 
+                opacity: 1;
+                transform: scale(1);
+            }
+            50% { 
+                opacity: 0.6;
+                transform: scale(1.2);
+            }
+        }
+
+        .vagas-notification__text {
+            font-family: 'Lexend Deca', sans-serif;
+            font-size: 0.75rem;
+            font-weight: 400;
+            color: rgba(255, 255, 255, 0.8);
+            letter-spacing: 0.05em;
+        }
+
+        .vagas-notification__text strong {
+            color: #EDF069;
+            font-weight: 600;
         }
 
         /* ========================================
            ESTRUTURA PRINCIPAL
            ======================================== */
         .site-wrapper {
-            padding-top: 60px;
+            padding-top: 0;
             align-items: center;
             display: flex;
             flex-direction: column;
@@ -182,6 +178,8 @@
         }
 
         .site-main {
+            --alignment: center;
+            --flex-alignment: center;
             align-items: center;
             display: flex;
             flex-grow: 0;
@@ -189,7 +187,7 @@
             justify-content: center;
             max-width: 100%;
             position: relative;
-            text-align: center;
+            text-align: var(--alignment);
             z-index: 1;
             width: 100%;
         }
@@ -197,8 +195,38 @@
         .site-main > .inner {
             max-width: 100%;
             position: relative;
-            width: 100%;
+            width: var(--width);
             z-index: 1;
+            padding: var(--padding-vertical) var(--padding-horizontal);
+        }
+
+        .site-main > .inner > * {
+            margin-top: var(--spacing);
+            margin-bottom: var(--spacing);
+        }
+
+        .site-main > .inner > :first-child {
+            margin-top: 0 !important;
+        }
+
+        .site-main > .inner > :last-child {
+            margin-bottom: 0 !important;
+        }
+
+        .site-main > .inner > .full {
+            margin-left: calc(var(--padding-horizontal) * -1);
+            max-width: calc(100% + calc(var(--padding-horizontal) * 2) + 0.4725px);
+            width: calc(100% + calc(var(--padding-horizontal) * 2) + 0.4725px);
+        }
+
+        .site-main > .inner > .full.screen {
+            border-radius: 0 !important;
+            max-width: 100vw;
+            position: relative;
+            width: 100vw;
+            left: 50%;
+            margin-left: -50vw;
+            right: auto;
         }
 
         /* ========================================
@@ -213,12 +241,17 @@
             position: relative;
         }
 
+        .text-component span.p:nth-child(n + 2) {
+            margin-top: 1rem;
+        }
+
         /* Style 5 - Labels amarelos */
         .text-component.style-5 {
             text-transform: uppercase;
             color: #EDF069;
             font-family: 'Lexend Deca', sans-serif;
             letter-spacing: 0.35rem;
+            width: calc(100% + 0.35rem);
             font-size: 0.875em;
             line-height: 1.875;
             font-weight: 600;
@@ -230,6 +263,7 @@
             color: #FFFFFF;
             font-family: 'Lexend Deca', sans-serif;
             letter-spacing: 0.35rem;
+            width: calc(100% + 0.35rem);
             font-size: 2.875em;
             line-height: 1.25;
             font-weight: 600;
@@ -241,13 +275,10 @@
             color: rgba(255,250,250,0.71);
             font-family: 'Inter', sans-serif;
             letter-spacing: 0.05rem;
+            width: calc(100% + 0.05rem);
             font-size: 1em;
             line-height: 2;
             font-weight: 300;
-        }
-
-        .text-component.style-7 span.p:nth-child(n + 2) {
-            margin-top: 1rem;
         }
 
         /* Style 6 - Labels pretos */
@@ -256,6 +287,7 @@
             color: #000000;
             font-family: 'Lexend Deca', sans-serif;
             letter-spacing: 0.35rem;
+            width: calc(100% + 0.35rem);
             font-size: 0.875em;
             line-height: 1.875;
             font-weight: 600;
@@ -267,6 +299,7 @@
             color: #000000;
             font-family: 'Lexend Deca', sans-serif;
             letter-spacing: 0.35rem;
+            width: calc(100% + 0.35rem);
             font-size: 2.875em;
             line-height: 1.625;
             font-weight: 600;
@@ -277,13 +310,10 @@
             color: rgba(10,0,0,0.71);
             font-family: 'Inter', sans-serif;
             letter-spacing: 0.05rem;
+            width: calc(100% + 0.05rem);
             font-size: 1em;
             line-height: 2;
             font-weight: 300;
-        }
-
-        .text-component.style-3 span.p:nth-child(n + 2) {
-            margin-top: 1rem;
         }
 
         /* Style 8 - Texto pequeno claro */
@@ -291,6 +321,7 @@
             color: rgba(247,240,240,0.69);
             font-family: 'Inter', sans-serif;
             letter-spacing: 0.05rem;
+            width: calc(100% + 0.05rem);
             font-size: 0.75em;
             line-height: 2;
             font-weight: 300;
@@ -301,9 +332,16 @@
             color: rgba(5,0,0,0.69);
             font-family: 'Inter', sans-serif;
             letter-spacing: 0.05rem;
+            width: calc(100% + 0.05rem);
             font-size: 0.75em;
             line-height: 2;
             font-weight: 300;
+        }
+
+        /* Título Investimento - não quebrar */
+        .titulo-menor {
+            font-size: 2.2em !important;
+            letter-spacing: 0.25rem !important;
         }
 
         /* ========================================
@@ -314,13 +352,18 @@
         }
 
         .container-component > .wrapper {
+            vertical-align: top;
             position: relative;
             max-width: 100%;
+            border-radius: inherit;
         }
 
         .container-component > .wrapper > .inner {
+            vertical-align: top;
             position: relative;
             max-width: 100%;
+            border-radius: inherit;
+            text-align: var(--alignment);
         }
 
         /* Container escuro com imagem de fundo */
@@ -335,24 +378,30 @@
         }
 
         .container-component.style-1 > .wrapper {
-            max-width: 50rem;
+            max-width: var(--width);
             width: 100%;
         }
 
         .container-component.style-1 > .wrapper > .inner {
-            padding: 6rem;
+            --gutters: calc(var(--padding-horizontal) * 2);
+            padding: var(--padding-vertical) var(--padding-horizontal);
         }
 
-        .container-component.style-1 > .wrapper > .inner > * {
-            margin-bottom: 1.5rem;
+        .container-component.style-1.default > .wrapper > .inner > * {
+            margin-bottom: var(--spacing);
+            margin-top: var(--spacing);
         }
 
-        .container-component.style-1 > .wrapper > .inner > *:last-child {
-            margin-bottom: 0;
+        .container-component.style-1.default > .wrapper > .inner > *:first-child {
+            margin-top: 0 !important;
+        }
+
+        .container-component.style-1.default > .wrapper > .inner > *:last-child {
+            margin-bottom: 0 !important;
         }
 
         /* Hero container */
-        .container-component.instance-hero {
+        .container-component.instance-11 {
             background-image: 
                 url('data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cfilter%20id%3D%22noise%22%3E%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.875%22%20result%3D%22noise%22%20%2F%3E%20%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.12109375%200%22%20%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20filter%3D%22url%28%23noise%29%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22transparent%22%20opacity%3D%221%22%20%2F%3E%3C%2Fsvg%3E'), 
                 linear-gradient(to top, rgba(0,0,0,0.753), rgba(0,0,0,0.753)), 
@@ -363,7 +412,7 @@
         }
 
         /* CTA container (final) */
-        .container-component.instance-cta {
+        .container-component.instance-2 {
             background-image: 
                 url('data:image/svg+xml;charset=utf8,%3Csvg%20viewBox%3D%220%200%20512%20512%22%20width%3D%22512%22%20height%3D%22512%22%20version%3D%221.1%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%20%3Cfilter%20id%3D%22noise%22%3E%20%3CfeTurbulence%20type%3D%22fractalNoise%22%20baseFrequency%3D%220.875%22%20result%3D%22noise%22%20%2F%3E%20%3CfeColorMatrix%20type%3D%22matrix%22%20values%3D%220%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200%200.12109375%200%22%20%2F%3E%20%3C%2Ffilter%3E%20%3Crect%20filter%3D%22url%28%23noise%29%22%20x%3D%220%22%20y%3D%220%22%20width%3D%22512%22%20height%3D%22512%22%20fill%3D%22transparent%22%20opacity%3D%221%22%20%2F%3E%3C%2Fsvg%3E'), 
                 linear-gradient(to top, rgba(0,0,0,0.753), rgba(0,0,0,0.753)), 
@@ -385,20 +434,26 @@
         }
 
         .container-component.style-2 > .wrapper {
-            max-width: 50rem;
+            max-width: var(--width);
             width: 100%;
         }
 
         .container-component.style-2 > .wrapper > .inner {
-            padding: 6rem;
+            --gutters: calc(var(--padding-horizontal) * 2);
+            padding: var(--padding-vertical) var(--padding-horizontal);
         }
 
-        .container-component.style-2 > .wrapper > .inner > * {
-            margin-bottom: 1.5rem;
+        .container-component.style-2.default > .wrapper > .inner > * {
+            margin-bottom: var(--spacing);
+            margin-top: var(--spacing);
         }
 
-        .container-component.style-2 > .wrapper > .inner > *:last-child {
-            margin-bottom: 0;
+        .container-component.style-2.default > .wrapper > .inner > *:first-child {
+            margin-top: 0 !important;
+        }
+
+        .container-component.style-2.default > .wrapper > .inner > *:last-child {
+            margin-bottom: 0 !important;
         }
 
         /* Container 2 colunas transparente */
@@ -418,24 +473,48 @@
         }
 
         .container-component.style-3 > .wrapper > .inner {
-            display: flex;
+            --gutters: calc(var(--padding-horizontal) * 2);
+            padding: var(--padding-vertical) var(--padding-horizontal);
+        }
+
+        .container-component.style-3.columns > .wrapper > .inner {
             flex-wrap: wrap;
+            display: flex;
             align-items: center;
-            padding: 6rem;
         }
 
-        .container-component.style-3 > .wrapper > .inner > div {
-            flex: 0 0 50%;
-            max-width: 50%;
-            padding: 0 3rem;
+        .container-component.style-3.columns > .wrapper > .inner > * {
+            flex-grow: 0;
+            flex-shrink: 0;
+            max-width: 100%;
+            text-align: var(--alignment);
+            padding: 0 0 0 var(--gutters);
         }
 
-        .container-component.style-3 > .wrapper > .inner > div > * {
-            margin-bottom: 1.5rem;
+        .container-component.style-3.columns > .wrapper > .inner > *:first-child {
+            margin-left: calc(var(--gutters) * -1);
         }
 
-        .container-component.style-3 > .wrapper > .inner > div > *:last-child {
-            margin-bottom: 0;
+        .container-component.style-3.columns > .wrapper > .inner > * > * {
+            margin-bottom: var(--spacing);
+            margin-top: var(--spacing);
+        }
+
+        .container-component.style-3.columns > .wrapper > .inner > * > *:first-child {
+            margin-top: 0 !important;
+        }
+
+        .container-component.style-3.columns > .wrapper > .inner > * > *:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        .container-component.instance-5 > .wrapper > .inner > :nth-child(1),
+        .container-component.instance-5 > .wrapper > .inner > :nth-child(2),
+        .container-component.instance-8 > .wrapper > .inner > :nth-child(1),
+        .container-component.instance-8 > .wrapper > .inner > :nth-child(2),
+        .container-component.instance-10 > .wrapper > .inner > :nth-child(1),
+        .container-component.instance-10 > .wrapper > .inner > :nth-child(2) {
+            width: calc(50% + (var(--gutters) / 2));
         }
 
         /* Container 2 colunas amarelo */
@@ -459,28 +538,52 @@
         }
 
         .container-component.style-4 > .wrapper > .inner {
-            display: flex;
+            --gutters: calc(var(--padding-horizontal) * 2);
+            padding: var(--padding-vertical) var(--padding-horizontal);
+        }
+
+        .container-component.style-4.columns > .wrapper > .inner {
             flex-wrap: wrap;
+            display: flex;
             align-items: center;
-            padding: 6rem;
         }
 
-        .container-component.style-4 > .wrapper > .inner > div {
-            flex: 0 0 50%;
-            max-width: 50%;
-            padding: 0 3rem;
+        .container-component.style-4.columns > .wrapper > .inner > * {
+            flex-grow: 0;
+            flex-shrink: 0;
+            max-width: 100%;
+            text-align: var(--alignment);
+            padding: 0 0 0 var(--gutters);
         }
 
-        .container-component.style-4 > .wrapper > .inner > div > * {
-            margin-bottom: 1.5rem;
+        .container-component.style-4.columns > .wrapper > .inner > *:first-child {
+            margin-left: calc(var(--gutters) * -1);
         }
 
-        .container-component.style-4 > .wrapper > .inner > div > *:last-child {
-            margin-bottom: 0;
+        .container-component.style-4.columns > .wrapper > .inner > * > * {
+            margin-bottom: var(--spacing);
+            margin-top: var(--spacing);
+        }
+
+        .container-component.style-4.columns > .wrapper > .inner > * > *:first-child {
+            margin-top: 0 !important;
+        }
+
+        .container-component.style-4.columns > .wrapper > .inner > * > *:last-child {
+            margin-bottom: 0 !important;
+        }
+
+        .container-component.instance-12 > .wrapper > .inner > :nth-child(1),
+        .container-component.instance-12 > .wrapper > .inner > :nth-child(2),
+        .container-component.instance-3 > .wrapper > .inner > :nth-child(1),
+        .container-component.instance-3 > .wrapper > .inner > :nth-child(2),
+        .container-component.instance-9 > .wrapper > .inner > :nth-child(1),
+        .container-component.instance-9 > .wrapper > .inner > :nth-child(2) {
+            width: calc(50% + (var(--gutters) / 2));
         }
 
         /* ========================================
-           IMAGENS
+           IMAGENS (igual original Carrd)
            ======================================== */
         .image-component {
             display: block;
@@ -490,6 +593,8 @@
         }
 
         .image-component > .frame {
+            -webkit-backface-visibility: hidden;
+            -webkit-transform: translate3d(0, 0, 0);
             display: inline-block;
             max-width: 100%;
             overflow: hidden;
@@ -501,68 +606,109 @@
             border-radius: 0 !important;
             max-width: 100%;
             vertical-align: top;
-            width: 100%;
-            height: auto;
-            object-fit: cover;
+            width: inherit;
+        }
+
+        .image-component.full > .frame {
+            display: block;
         }
 
         .image-component.style-1 > .frame {
-            width: 100%;
+            width: 100vw;
+            transition: none;
+        }
+
+        .image-component.style-1 > .frame > img {
+            transition: none;
         }
 
         /* ========================================
-           GALERIA
+           GALERIA (igual original)
            ======================================== */
         .gallery-component > .inner {
             display: inline-block;
             max-width: 100%;
+            vertical-align: middle;
             width: 100%;
         }
 
         .gallery-component ul {
             display: flex;
             flex-wrap: wrap;
-            gap: 0;
+            justify-content: var(--flex-alignment);
+            --gap: 0rem;
+            gap: var(--gap);
         }
 
         .gallery-component ul > li {
             position: relative;
-            flex: 1 1 33.333%;
+            border-radius: 0rem;
+            display: inline-block;
+            flex-grow: 1;
+            flex-shrink: 0;
+            flex-basis: calc(33.333333333333% - var(--gap));
+        }
+
+        .gallery-component ul > li > .thumbnail {
+            border-radius: inherit;
+            position: relative;
+            display: block;
+            transition: none;
         }
 
         .gallery-component ul > li > .thumbnail > .frame {
-            display: block;
+            -webkit-backface-visibility: hidden;
+            -webkit-transform: translate3d(0, 0, 0);
+            display: inline-block;
             overflow: hidden;
+            vertical-align: top;
+            border-radius: 0rem;
             width: 100%;
         }
 
         .gallery-component ul > li > .thumbnail > .frame > img {
-            width: 100%;
+            margin: 0;
+            max-width: 100%;
+            vertical-align: top;
+            width: auto;
             height: 24.375rem;
             object-fit: cover;
             object-position: center;
+            width: 100%;
+            transition: none;
         }
 
         .gallery-component ul > li > .caption {
+            width: 100%;
+            align-items: center;
+            border-radius: inherit;
+            display: flex;
+            height: 100%;
+            left: 0;
+            pointer-events: none;
             position: absolute;
             top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
             background-color: rgba(0,0,0,0.322);
+            transition: opacity 0.25s ease, transform 0.25s ease, z-index 0.25s ease;
         }
 
         .gallery-component ul > li > .caption > p {
+            width: 100%;
+            border-radius: inherit;
+            padding-bottom: 1.5625rem;
+            padding-left: 2.5rem;
+            padding-right: 2.5rem;
+            padding-top: 1.5625rem;
             text-transform: uppercase;
             color: #FFFFFF;
             font-family: 'Lexend Deca', sans-serif;
             letter-spacing: 0.35rem;
             font-size: 0.875em;
+            line-height: 1.5;
+            overflow-x: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
             font-weight: 600;
-            padding: 1.5rem 2.5rem;
         }
 
         /* ========================================
@@ -624,7 +770,7 @@
         }
 
         /* ========================================
-           BOTÃO FLUTUANTE WHATSAPP
+           BOTÃO FLUTUANTE - VERDE FLORESTA
            ======================================== */
         .floating-cta {
             position: fixed;
@@ -633,36 +779,41 @@
             z-index: 9998;
             display: flex;
             align-items: center;
-            gap: 12px;
-            background: #25D366;
+            justify-content: center;
+            width: 56px;
+            height: 56px;
+            background: linear-gradient(135deg, #2D5A3D 0%, #1E3D2A 100%);
             color: #fff;
-            padding: 15px 25px;
-            border-radius: 50px;
+            border-radius: 50%;
             text-decoration: none;
-            font-family: 'Lexend Deca', sans-serif;
-            font-weight: 600;
-            font-size: 0.9rem;
-            box-shadow: 0 5px 30px rgba(37, 211, 102, 0.4);
-            transition: all 0.3s ease;
-            animation: float 3s ease-in-out infinite;
+            box-shadow: 0 4px 20px rgba(45, 90, 61, 0.4);
+            transition: all 0.4s ease;
             border: none;
             cursor: pointer;
+            animation: floatSubtle 4s ease-in-out infinite;
         }
 
         .floating-cta:hover {
-            transform: scale(1.05);
-            box-shadow: 0 8px 40px rgba(37, 211, 102, 0.5);
+            transform: scale(1.08);
+            box-shadow: 0 6px 30px rgba(45, 90, 61, 0.6);
+            background: linear-gradient(135deg, #3A7350 0%, #2D5A3D 100%);
         }
 
         .floating-cta svg {
-            width: 24px;
-            height: 24px;
+            width: 26px;
+            height: 26px;
             fill: currentColor;
         }
 
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
+        @keyframes floatSubtle {
+            0%, 100% { 
+                transform: translateY(0);
+                box-shadow: 0 4px 20px rgba(45, 90, 61, 0.4);
+            }
+            50% { 
+                transform: translateY(-4px);
+                box-shadow: 0 8px 30px rgba(45, 90, 61, 0.5);
+            }
         }
 
         /* ========================================
@@ -1206,17 +1357,45 @@
         }
 
         @media (max-width: 736px) {
-            html { font-size: 12pt; }
+    .titulo-menor {
+        font-size: 1.6em !important;
+        letter-spacing: 0.15rem !important;
+        .vagas-notification {
+    top: 15px;
+    padding: 8px 16px;
+}
+
+.vagas-notification__text {
+    font-size: 0.65rem;
+}
+
+.vagas-notification__dot {
+    width: 6px;
+    height: 6px;
+}
+
+    }
             
-            .urgency-bar {
-                flex-direction: column;
-                gap: 10px;
-                padding: 10px 15px;
-            }
-            
-            .urgency-bar__text {
-                font-size: 0.75rem;
-            }
+}
+
+@media (max-width: 480px) {
+    .titulo-menor {
+        font-size: 1.4em !important;
+        letter-spacing: 0.1rem !important;
+    }
+}
+@media (max-width: 480px) {
+    .image-component.style-1 > .frame {
+        height: 20rem !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .image-component.style-1 > .frame {
+        height: 17.5rem !important;
+    }
+}
+
             
             .site-wrapper {
                 padding-top: 100px;
@@ -1257,16 +1436,17 @@
                 height: auto;
             }
             
-            .floating-cta span {
-                display: none;
-            }
-            
             .floating-cta {
-                padding: 15px;
-                border-radius: 50%;
-                bottom: 20px;
-                right: 20px;
-            }
+    bottom: 20px;
+    right: 20px;
+    width: 50px;
+    height: 50px;
+}
+
+.floating-cta svg {
+    width: 22px;
+    height: 22px;
+}
             
             .pricing-card {
                 padding: 2rem;
@@ -1305,18 +1485,92 @@
                 font-size: 1rem;
             }
         }
+
+        /* ========================================
+   ANIMAÇÕES DE ENTRADA SUAVES
+   ======================================== */
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* Textos com animação */
+.text-component {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.text-component.style-5 {
+    animation: fadeInRight 0.8s ease forwards;
+    animation-delay: 0.1s;
+}
+
+.text-component.style-2,
+.text-component.style-4 {
+    animation: fadeInLeft 0.8s ease forwards;
+    animation-delay: 0.2s;
+}
+
+.text-component.style-7,
+.text-component.style-3 {
+    animation: fadeInUp 0.8s ease forwards;
+    animation-delay: 0.3s;
+}
+
+/* Imagens com animação */
+.image-component {
+    opacity: 0;
+    animation: fadeInUp 1s ease forwards;
+    animation-delay: 0.4s;
+}
+
+/* Galeria com animação */
+.gallery-component ul > li {
+    opacity: 0;
+    animation: fadeInUp 0.8s ease forwards;
+}
+
+.gallery-component ul > li:nth-child(1) { animation-delay: 0.1s; }
+.gallery-component ul > li:nth-child(2) { animation-delay: 0.2s; }
+.gallery-component ul > li:nth-child(3) { animation-delay: 0.3s; }
+
+        
     </style>
 </head>
 <body>
-    <!-- BARRA DE URGÊNCIA -->
-    <div class="urgency-bar">
-        <span class="urgency-bar__text">Vagas Limitadas</span>
-        <div class="urgency-bar__counter">
-            <span class="urgency-bar__pulse"></span>
-            <span class="urgency-bar__number">Restam apenas <strong id="vagas-count">8</strong> vagas</span>
-        </div>
-        <button onclick="openModal()" class="urgency-bar__cta">Garantir Minha Vaga</button>
-    </div>
+    <!-- NOTIFICAÇÃO DE VAGAS - SUTIL -->
+<div class="vagas-notification" onclick="openModal()">
+    <span class="vagas-notification__dot"></span>
+    <span class="vagas-notification__text">Restam apenas <strong>8</strong> vagas</span>
+</div>
 
     <div class="site-wrapper">
         <div class="site-main">
@@ -1370,7 +1624,7 @@
                                 </p>
                             </div>
                             <div>
-                                <div class="image-component style-1">
+                                <div class="image-component style-1 full">
                                     <span class="frame">
                                         <img src="https://muvyogainfo.carrd.co/assets/images/image02.jpg?v=268f29e7" alt="Os Pilares do MuvYoga" />
                                     </span>
@@ -1385,7 +1639,7 @@
                     <div class="wrapper">
                         <div class="inner">
                             <div>
-                                <div class="image-component style-1">
+                                <div class="image-component style-1 full">
                                     <span class="frame">
                                         <img src="https://muvyogainfo.carrd.co/assets/images/image03.jpg?v=268f29e7" alt="Máncora, Peru" />
                                     </span>
@@ -1418,7 +1672,7 @@
                                 <button onclick="openModal()" class="cta-button">Reservar Minha Vaga</button>
                             </div>
                             <div>
-                                <div class="image-component style-1">
+                                <div class="image-component style-1 full">
                                     <span class="frame">
                                         <img src="https://muvyogainfo.carrd.co/assets/images/image04.jpg?v=268f29e7" alt="Máncora" />
                                     </span>
@@ -1433,7 +1687,7 @@
                     <div class="wrapper">
                         <div class="inner">
                             <div>
-                                <div class="image-component style-1">
+                                <div class="image-component style-1 full">
                                     <span class="frame">
                                         <img src="https://muvyogainfo.carrd.co/assets/images/image01.jpg?v=268f29e7" alt="Para quem é" />
                                     </span>
@@ -1570,7 +1824,7 @@
                     <div class="wrapper">
                         <div class="inner">
                             <div>
-                                <div class="image-component style-1">
+                                <div class="image-component style-1 full">
                                     <span class="frame">
                                         <img src="https://muvyogainfo.carrd.co/assets/images/image05.jpg?v=268f29e7" alt="Investimento" />
                                     </span>
@@ -1578,7 +1832,7 @@
                             </div>
                             <div>
                                 <p class="text-component style-6">invista em você</p>
-                                <h2 class="text-component style-4">Investimento</h2>
+                                <h2 class="text-component style-4 titulo-menor">Investimento</h2>
                                 
                                 <div class="pricing-card">
                                     <div class="pricing-card__badge">Valor da Imersão Completa</div>
@@ -1759,13 +2013,12 @@
         </div>
     </div>
 
-    <!-- BOTÃO FLUTUANTE -->
-    <button onclick="openModal()" class="floating-cta">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
-            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-        </svg>
-        <span>Fale Conosco</span>
-    </button>
+    <!-- BOTÃO FLUTUANTE - VERDE FLORESTA -->
+<button onclick="openModal()" class="floating-cta" title="Fale Conosco">
+    <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+    </svg>
+</button>
 
     <!-- MODAL DE CAPTURA -->
     <div class="modal-overlay" id="captureModal">
@@ -1862,14 +2115,7 @@ document.getElementById('captureForm').addEventListener('submit', async (e) => {
     }
     
     // Redireciona para WhatsApp
-    const mensagem = `Olá Ricardo! Tenho interesse no MuvYoga Experience Máncora.
-
-*Meus dados:*
-Nome: ${nome}
-E-mail: ${email}
-WhatsApp: ${telefone}
-
-Gostaria de mais informações para garantir minha vaga.`;
+const mensagem = `Oi Ricardo! Tenho interesse na imersão MuvYoga em Máncora e quero saber mais 🙏`;
     
     window.open(`https://wa.me/5511943421151?text=${encodeURIComponent(mensagem)}`, '_blank');
     
