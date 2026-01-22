@@ -1836,15 +1836,33 @@
             }
         });
 
-        // Form submit - redireciona para WhatsApp com os dados
-        document.getElementById('captureForm').addEventListener('submit', (e) => {
-            e.preventDefault();
-            
-            const nome = e.target.nome.value;
-            const email = e.target.email.value;
-            const telefone = e.target.telefone.value;
-            
-            const mensagem = `Olá Ricardo! Tenho interesse no MuvYoga Experience Máncora.
+// Form submit - salva no Google Sheets E redireciona para WhatsApp
+document.getElementById('captureForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    
+    const nome = e.target.nome.value;
+    const email = e.target.email.value;
+    const telefone = e.target.telefone.value;
+    
+    const submitBtn = e.target.querySelector('.modal__submit');
+    const originalText = submitBtn.textContent;
+    submitBtn.textContent = 'Enviando...';
+    submitBtn.disabled = true;
+    
+    // Salva no Google Sheets
+    try {
+        await fetch('https://script.google.com/macros/s/AKfycbwV1Ez9qC7F77_fX84so3FNasPTmVSTTkEm_3LVqQHdQMS407m0RGSvq4rlRawnPCFXCA/exec', {
+            method: 'POST',
+            mode: 'no-cors',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({ nome, email, telefone })
+        });
+    } catch (error) {
+        console.log('Erro ao salvar:', error);
+    }
+    
+    // Redireciona para WhatsApp
+    const mensagem = `Olá Ricardo! Tenho interesse no MuvYoga Experience Máncora.
 
 *Meus dados:*
 Nome: ${nome}
@@ -1852,12 +1870,16 @@ E-mail: ${email}
 WhatsApp: ${telefone}
 
 Gostaria de mais informações para garantir minha vaga.`;
-            
-            const whatsappUrl = `https://wa.me/5511943421151?text=${encodeURIComponent(mensagem)}`;
-            
-            window.open(whatsappUrl, '_blank');
-            closeModal();
-        });
+    
+    window.open(`https://wa.me/5511943421151?text=${encodeURIComponent(mensagem)}`, '_blank');
+    
+    // Limpa e fecha
+    closeModal();
+    e.target.reset();
+    submitBtn.textContent = originalText;
+    submitBtn.disabled = false;
+});
+        
 
         // Smooth scroll for anchor links
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
