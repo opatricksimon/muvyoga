@@ -494,42 +494,100 @@
 .image-component.img-right { --img-position: 20%; }
 
 /* ========================================
-   SEÇÃO DO CONDUTOR - Com controle de tamanho e posição
-   ======================================== */
-/*
-   COMO USAR NA SEÇÃO DO CONDUTOR:
-   ----------------------------------------
-   <div class="conductor-section__image" style="--img-scale: 1.5; --img-position: -20%;">
-   
-   --img-scale: tamanho (1 = 100%, 1.5 = 150%, 2 = 200%)
-   --img-position: posição horizontal (negativo = esquerda, positivo = direita)
-*/
+           SEÇÃO DO CONDUTOR
+           ======================================== */
+        .conductor-section {
+            padding: 6rem 2rem;
+        }
 
-.conductor-section__image {
-    --img-scale: 1;
-    --img-position: 0;
-    flex: 0 0 calc(400px * var(--img-scale));
-    max-width: none;
-    position: relative;
-    overflow: visible;
-}
+        .conductor-section > .wrapper {
+            max-width: 1400px;
+            margin: 0 auto;
+        }
 
-.conductor-section__photo {
-    width: 100%;
-    max-width: none;
-    height: auto;
-    object-fit: cover;
-    transform: translateX(var(--img-position));
-}
+        .conductor-section > .wrapper > .inner {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 4rem;
+        }
 
-/* Garante que o wrapper não corte a imagem */
-.conductor-section > .wrapper {
-    overflow: visible;
-}
+        .conductor-section__image {
+            flex: 0 0 auto;
+            overflow: visible;
+        }
 
-.conductor-section > .wrapper > .inner {
-    overflow: visible;
-}
+        /* 
+           CONTROLE DO TAMANHO DA FOTO DO CONDUTOR
+           Altere o width abaixo para mudar o tamanho:
+           - 300px = pequeno
+           - 400px = médio (padrão)
+           - 500px = grande
+           - 600px = bem grande
+           - 700px = enorme
+        */
+        .conductor-section__photo {
+            width: 500px; /* <<< MUDE AQUI O TAMANHO */
+            max-width: none;
+            height: auto;
+            object-fit: cover;
+        }
+
+        .conductor-section__content {
+            flex: 1;
+            min-width: 300px;
+        }
+
+        .conductor-section__label {
+            text-transform: uppercase;
+            color: #EDF069;
+            font-family: 'Lexend Deca', sans-serif;
+            letter-spacing: 0.35rem;
+            font-size: 0.875em;
+            line-height: 1.875;
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+
+        .conductor-section__title {
+            text-transform: uppercase;
+            color: #FFFFFF;
+            font-family: 'Lexend Deca', sans-serif;
+            letter-spacing: 0.2rem;
+            font-size: 2.5em;
+            line-height: 1.25;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+
+        .conductor-section__bio {
+            color: rgba(255,250,250,0.71);
+            font-family: 'Inter', sans-serif;
+            font-size: 1em;
+            line-height: 2;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .conductor-section__bio p {
+            margin-bottom: 1rem;
+        }
+
+        .conductor-section__credentials {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+
+        .conductor-section__credential {
+            background: rgba(237, 240, 105, 0.1);
+            border: 1px solid rgba(237, 240, 105, 0.2);
+            padding: 0.75rem 1.25rem;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.8);
+        }
 
 
 /* ========================================
