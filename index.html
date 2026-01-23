@@ -79,6 +79,83 @@
         }
 
         /* ========================================
+           PROGRESS BAR NO TOPO
+           ======================================== */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 3px;
+            background: linear-gradient(90deg, #EDF069, #fff, #EDF069);
+            background-size: 200% 100%;
+            animation: shimmer-progress 2s linear infinite;
+            z-index: 10001;
+            transition: width 0.1s ease-out;
+        }
+
+        @keyframes shimmer-progress {
+            0% { background-position: 200% 0; }
+            100% { background-position: -200% 0; }
+        }
+
+        /* ========================================
+           ANIMAÇÕES DE ENTRADA (FADE IN)
+           ======================================== */
+        .animate-on-scroll {
+            opacity: 0;
+            transform: translateY(40px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-on-scroll.animated {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* Variações de delay para elementos em sequência */
+        .animate-delay-1 { transition-delay: 0.1s; }
+        .animate-delay-2 { transition-delay: 0.2s; }
+        .animate-delay-3 { transition-delay: 0.3s; }
+        .animate-delay-4 { transition-delay: 0.4s; }
+
+        /* Animação da esquerda */
+        .animate-from-left {
+            opacity: 0;
+            transform: translateX(-60px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-from-left.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Animação da direita */
+        .animate-from-right {
+            opacity: 0;
+            transform: translateX(60px);
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+        }
+
+        .animate-from-right.animated {
+            opacity: 1;
+            transform: translateX(0);
+        }
+
+        /* Animação de escala */
+        .animate-scale {
+            opacity: 0;
+            transform: scale(0.9);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+
+        .animate-scale.animated {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        /* ========================================
            ESTRUTURA PRINCIPAL
            ======================================== */
         .site-wrapper {
@@ -198,16 +275,6 @@
         /* Texto pequeno claro */
         .text-component.style-8 {
             color: rgba(247,240,240,0.69);
-            font-family: 'Inter', sans-serif;
-            letter-spacing: 0.05rem;
-            font-size: 0.75em;
-            line-height: 2;
-            font-weight: 300;
-        }
-
-        /* Texto pequeno escuro */
-        .text-component.style-1 {
-            color: rgba(5,0,0,0.69);
             font-family: 'Inter', sans-serif;
             letter-spacing: 0.05rem;
             font-size: 0.75em;
@@ -393,36 +460,6 @@
         /* ========================================
            IMAGENS - Controle de tamanho e posição
            ======================================== */
-        /*
-           =====================================================
-           INSTRUÇÕES PARA AJUSTAR IMAGENS
-           =====================================================
-           
-           TAMANHO - use --img-scale:
-           ----------------------------------------
-           --img-scale: 0.7   = 70% (menor)
-           --img-scale: 1     = 100% (padrão)
-           --img-scale: 1.2   = 120% (maior)
-           --img-scale: 1.5   = 150% (bem maior)
-           
-           POSIÇÃO HORIZONTAL - use --img-position:
-           ----------------------------------------
-           --img-position: -30%  = muito à esquerda
-           --img-position: -15%  = um pouco à esquerda
-           --img-position: 0     = centralizado (padrão)
-           --img-position: 15%   = um pouco à direita
-           --img-position: 30%   = muito à direita
-           
-           COMO USAR NO HTML:
-           ----------------------------------------
-           <div class="image-component style-1" style="--img-scale: 1.3; --img-position: -20%;">
-           
-           IMPORTANTE:
-           ----------------------------------------
-           - No DESKTOP: escala e posição funcionam
-           - No MOBILE: ignora os ajustes, fica centralizado
-        */
-
         .image-component {
             display: block;
             line-height: 0;
@@ -448,23 +485,17 @@
             width: 100%;
             height: auto;
             object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        /* Hover sutil nas imagens */
+        .image-component:hover > .frame > img {
+            transform: scale(1.02);
         }
 
         /* ========================================
-           SEÇÃO DO CONDUTOR - Controle de tamanho e posição
+           SEÇÃO DO CONDUTOR
            ======================================== */
-        /*
-           COMO USAR NA SEÇÃO DO CONDUTOR:
-           ----------------------------------------
-           <div class="conductor-section__image" style="--img-scale: 1.5; --img-position: -20%;">
-           
-           --img-scale: tamanho (1 = 100%, 1.5 = 150%, 2 = 200%)
-           --img-position: posição horizontal (negativo = esquerda, positivo = direita)
-           
-           IMPORTANTE: A imagem cresce A PARTIR DA ESQUERDA
-           Isso mantém ela no lugar enquanto aumenta para a direita.
-        */
-
         .conductor-section {
             padding: 6rem 2rem;
             overflow: visible;
@@ -498,10 +529,9 @@
             max-width: none;
             height: auto;
             object-fit: cover;
-            /* Escala + Posição combinados */
             transform: scale(var(--img-scale)) translateX(var(--img-position));
-            /* Cresce a partir da ESQUERDA (mantém posição) */
             transform-origin: left center;
+            transition: all 0.5s ease;
         }
 
         .conductor-section__content {
@@ -560,6 +590,13 @@
             font-family: 'Inter', sans-serif;
             font-size: 0.85rem;
             color: rgba(255,255,255,0.8);
+            transition: all 0.3s ease;
+        }
+
+        .conductor-section__credential:hover {
+            background: rgba(237, 240, 105, 0.2);
+            border-color: rgba(237, 240, 105, 0.4);
+            transform: translateY(-2px);
         }
 
         /* ========================================
@@ -581,6 +618,7 @@
         .gallery-component ul > li {
             position: relative;
             flex: 1 1 33.333%;
+            overflow: hidden;
         }
 
         .gallery-component ul > li > .thumbnail > .frame {
@@ -594,6 +632,11 @@
             height: 24.375rem;
             object-fit: cover;
             object-position: center;
+            transition: transform 0.6s ease;
+        }
+
+        .gallery-component ul > li:hover > .thumbnail > .frame > img {
+            transform: scale(1.08);
         }
 
         .gallery-component ul > li > .caption {
@@ -606,6 +649,11 @@
             align-items: center;
             justify-content: center;
             background-color: rgba(0,0,0,0.322);
+            transition: background-color 0.3s ease;
+        }
+
+        .gallery-component ul > li:hover > .caption {
+            background-color: rgba(0,0,0,0.5);
         }
 
         .gallery-component ul > li > .caption > p {
@@ -616,30 +664,22 @@
             font-size: 0.875em;
             font-weight: 600;
             padding: 1.5rem 2.5rem;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-component ul > li:hover > .caption > p {
+            transform: scale(1.1);
         }
 
         /* ========================================
-           BOTÕES CTA
+           BOTÕES CTA - Com efeito shimmer metálico
            ======================================== */
-        @keyframes subtle-pulse {
-            0%, 100% { 
-                transform: scale(1); 
-                box-shadow: 0 0 0 0 rgba(237, 240, 105, 0.4);
+        @keyframes shimmer {
+            0% {
+                left: -100%;
             }
-            50% { 
-                transform: scale(1.02); 
-                box-shadow: 0 0 20px 0 rgba(237, 240, 105, 0.3);
-            }
-        }
-
-        @keyframes subtle-pulse-dark {
-            0%, 100% { 
-                transform: scale(1); 
-                box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.3);
-            }
-            50% { 
-                transform: scale(1.02); 
-                box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.2);
+            100% {
+                left: 200%;
             }
         }
 
@@ -661,39 +701,101 @@
             text-decoration: none;
             transition: all 0.3s ease;
             margin-top: 2rem;
-            animation: subtle-pulse 2.5s ease-in-out infinite;
+            position: relative;
+            overflow: hidden;
+            /* Efeito de brilho base */
+            box-shadow: 
+                0 0 20px rgba(237, 240, 105, 0.3),
+                inset 0 1px 0 rgba(255,255,255,0.4),
+                inset 0 -1px 0 rgba(0,0,0,0.1);
+        }
+
+        /* Efeito shimmer metálico */
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,0.4),
+                rgba(255,255,255,0.6),
+                rgba(255,255,255,0.4),
+                transparent
+            );
+            transform: skewX(-20deg);
+            animation: shimmer 3s ease-in-out infinite;
         }
 
         .cta-button:hover {
             background: #fff;
-            transform: scale(1.05);
-            box-shadow: 0 10px 30px rgba(237, 240, 105, 0.4);
-            animation: none;
+            transform: translateY(-3px);
+            box-shadow: 
+                0 10px 40px rgba(237, 240, 105, 0.5),
+                0 0 60px rgba(237, 240, 105, 0.3),
+                inset 0 1px 0 rgba(255,255,255,0.6);
+        }
+
+        .cta-button:hover::before {
+            animation: shimmer 1.5s ease-in-out infinite;
         }
 
         .cta-button--secondary {
             background: transparent;
             color: #EDF069;
             border: 2px solid #EDF069;
-            animation: none;
-            box-shadow: 0 0 15px 0 rgba(237, 240, 105, 0.15);
+            box-shadow: 
+                0 0 15px rgba(237, 240, 105, 0.15),
+                inset 0 0 20px rgba(237, 240, 105, 0.05);
+        }
+
+        .cta-button--secondary::before {
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(237, 240, 105, 0.2),
+                rgba(237, 240, 105, 0.4),
+                rgba(237, 240, 105, 0.2),
+                transparent
+            );
         }
 
         .cta-button--secondary:hover {
             background: #EDF069;
             color: #000;
-            box-shadow: 0 0 25px 0 rgba(237, 240, 105, 0.4);
+            box-shadow: 
+                0 0 30px rgba(237, 240, 105, 0.5),
+                inset 0 1px 0 rgba(255,255,255,0.4);
         }
 
         .cta-button--dark {
             background: #000;
             color: #EDF069;
-            animation: subtle-pulse-dark 2.5s ease-in-out infinite;
+            box-shadow: 
+                0 0 20px rgba(0, 0, 0, 0.3),
+                inset 0 1px 0 rgba(255,255,255,0.1),
+                inset 0 -1px 0 rgba(0,0,0,0.3);
+        }
+
+        .cta-button--dark::before {
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(237, 240, 105, 0.15),
+                rgba(237, 240, 105, 0.3),
+                rgba(237, 240, 105, 0.15),
+                transparent
+            );
         }
 
         .cta-button--dark:hover {
-            background: #222;
-            animation: none;
+            background: #1a1a1a;
+            box-shadow: 
+                0 10px 40px rgba(0, 0, 0, 0.4),
+                0 0 30px rgba(237, 240, 105, 0.2);
         }
 
         .cta-wrapper {
@@ -702,6 +804,124 @@
             gap: 15px;
             justify-content: center;
             margin-top: 2rem;
+        }
+
+        /* ========================================
+           INDICADOR DE SCROLL NO HERO
+           ======================================== */
+        .scroll-indicator {
+            position: absolute;
+            bottom: 40px;
+            left: 50%;
+            transform: translateX(-50%);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 10px;
+            color: rgba(255,255,255,0.6);
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            animation: bounce 2s ease-in-out infinite;
+            cursor: pointer;
+            transition: color 0.3s ease;
+        }
+
+        .scroll-indicator:hover {
+            color: #EDF069;
+        }
+
+        .scroll-indicator__mouse {
+            width: 24px;
+            height: 40px;
+            border: 2px solid currentColor;
+            border-radius: 12px;
+            position: relative;
+        }
+
+        .scroll-indicator__wheel {
+            width: 4px;
+            height: 8px;
+            background: currentColor;
+            border-radius: 2px;
+            position: absolute;
+            top: 8px;
+            left: 50%;
+            transform: translateX(-50%);
+            animation: scroll-wheel 2s ease-in-out infinite;
+        }
+
+        @keyframes bounce {
+            0%, 100% { transform: translateX(-50%) translateY(0); }
+            50% { transform: translateX(-50%) translateY(10px); }
+        }
+
+        @keyframes scroll-wheel {
+            0%, 100% { opacity: 1; top: 8px; }
+            50% { opacity: 0.3; top: 18px; }
+        }
+
+        /* ========================================
+           CONTADOR DE VAGAS
+           ======================================== */
+        .spots-counter {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: rgba(237, 240, 105, 0.1);
+            border: 1px solid rgba(237, 240, 105, 0.3);
+            padding: 12px 24px;
+            margin-bottom: 1.5rem;
+            animation: pulse-glow 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse-glow {
+            0%, 100% { box-shadow: 0 0 0 0 rgba(237, 240, 105, 0.2); }
+            50% { box-shadow: 0 0 20px 0 rgba(237, 240, 105, 0.3); }
+        }
+
+        .spots-counter__icon {
+            width: 8px;
+            height: 8px;
+            background: #EDF069;
+            border-radius: 50%;
+            animation: blink 1.5s ease-in-out infinite;
+        }
+
+        @keyframes blink {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.4; }
+        }
+
+        .spots-counter__text {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            color: rgba(255,255,255,0.8);
+        }
+
+        .spots-counter__number {
+            font-family: 'Lexend Deca', sans-serif;
+            font-weight: 600;
+            color: #EDF069;
+        }
+
+        /* Versão escura para fundo amarelo */
+        .spots-counter--dark {
+            background: rgba(0, 0, 0, 0.1);
+            border-color: rgba(0, 0, 0, 0.2);
+        }
+
+        .spots-counter--dark .spots-counter__icon {
+            background: #000;
+        }
+
+        .spots-counter--dark .spots-counter__text {
+            color: rgba(0,0,0,0.7);
+        }
+
+        .spots-counter--dark .spots-counter__number {
+            color: #000;
         }
 
         /* ========================================
@@ -733,11 +953,30 @@
             animation: float 3s ease-in-out infinite;
             border: none;
             cursor: pointer;
+            overflow: hidden;
+        }
+
+        .floating-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,0.3),
+                transparent
+            );
+            transform: skewX(-20deg);
+            animation: shimmer 4s ease-in-out infinite;
         }
 
         .floating-cta:hover {
             transform: scale(1.05);
             box-shadow: 0 8px 40px rgba(37, 211, 102, 0.5);
+            animation: none;
         }
 
         .floating-cta svg {
@@ -756,6 +995,12 @@
             max-width: 100%;
             margin: 0 auto;
             text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 60px rgba(0,0,0,0.2);
         }
 
         .pricing-card__badge {
@@ -956,6 +1201,11 @@
             align-items: center;
             cursor: pointer;
             text-align: left;
+            transition: all 0.3s ease;
+        }
+
+        .faq-question:hover {
+            padding-left: 10px;
         }
 
         .faq-question__text {
@@ -964,6 +1214,11 @@
             font-weight: 600;
             color: #fff;
             padding-right: 2rem;
+            transition: color 0.3s ease;
+        }
+
+        .faq-question:hover .faq-question__text {
+            color: #EDF069;
         }
 
         .faq-question__icon {
@@ -1005,7 +1260,7 @@
         .faq-answer {
             max-height: 0;
             overflow: hidden;
-            transition: max-height 0.3s ease, padding 0.3s ease;
+            transition: max-height 0.4s ease, padding 0.4s ease;
         }
 
         .faq-item.active .faq-answer {
@@ -1038,6 +1293,7 @@
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
         }
 
         .modal-overlay.active {
@@ -1051,12 +1307,13 @@
             width: 100%;
             padding: 3rem;
             position: relative;
-            transform: translateY(20px);
-            transition: transform 0.3s ease;
+            transform: translateY(20px) scale(0.95);
+            transition: transform 0.4s ease;
+            box-shadow: 0 25px 80px rgba(0,0,0,0.5);
         }
 
         .modal-overlay.active .modal {
-            transform: translateY(0);
+            transform: translateY(0) scale(1);
         }
 
         .modal__close {
@@ -1071,6 +1328,11 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            transition: transform 0.3s ease;
+        }
+
+        .modal__close:hover {
+            transform: rotate(90deg);
         }
 
         .modal__close::before,
@@ -1150,6 +1412,7 @@
             outline: none;
             border-color: #EDF069;
             background: rgba(237, 240, 105, 0.05);
+            box-shadow: 0 0 20px rgba(237, 240, 105, 0.1);
         }
 
         .modal__submit {
@@ -1165,10 +1428,31 @@
             letter-spacing: 0.1em;
             cursor: pointer;
             transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .modal__submit::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 60%;
+            height: 100%;
+            background: linear-gradient(
+                90deg,
+                transparent,
+                rgba(255,255,255,0.4),
+                transparent
+            );
+            transform: skewX(-20deg);
+            animation: shimmer 3s ease-in-out infinite;
         }
 
         .modal__submit:hover {
             background: #fff;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px rgba(237, 240, 105, 0.3);
         }
 
         .modal__privacy {
@@ -1219,7 +1503,6 @@
                 padding: 2rem 0;
             }
             
-            /* Títulos em mobile */
             .text-component.style-2,
             .text-component.style-4 {
                 font-size: 1.8em;
@@ -1229,7 +1512,6 @@
                 hyphens: none;
             }
             
-            /* Imagens em mobile - reseta ajustes */
             .image-component > .frame {
                 transform: translateX(0) !important;
                 margin-left: auto !important;
@@ -1237,7 +1519,6 @@
                 width: 100% !important;
             }
             
-            /* Condutor em mobile */
             .conductor-section > .wrapper > .inner {
                 flex-direction: column;
             }
@@ -1254,7 +1535,6 @@
                 width: 100% !important;
             }
             
-            /* Galeria em mobile */
             .gallery-component ul {
                 flex-direction: column;
             }
@@ -1267,7 +1547,6 @@
                 height: auto;
             }
             
-            /* Botão flutuante em mobile */
             .floating-cta span {
                 display: none;
             }
@@ -1279,7 +1558,6 @@
                 right: 20px;
             }
             
-            /* Pricing em mobile */
             .pricing-card {
                 padding: 2rem;
             }
@@ -1293,15 +1571,28 @@
                 line-height: 1.6;
             }
             
-            /* Modal em mobile */
             .modal {
                 padding: 2rem;
             }
             
-            /* CTA em mobile */
             .cta-button {
                 padding: 15px 30px;
                 font-size: 0.9rem;
+            }
+
+            .scroll-indicator {
+                bottom: 20px;
+            }
+
+            /* Desativa algumas animações em mobile para performance */
+            .animate-from-left,
+            .animate-from-right {
+                transform: translateY(30px);
+            }
+
+            .animate-from-left.animated,
+            .animate-from-right.animated {
+                transform: translateY(0);
             }
         }
 
@@ -1318,6 +1609,9 @@
 </head>
 
 <body>
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
+
     <div class="site-wrapper">
         <div class="site-main">
             <div class="inner">
@@ -1326,27 +1620,42 @@
                 <div class="container-component instance-hero style-1">
                     <div class="wrapper">
                         <div class="inner">
-                            <p class="text-component style-5">movimento · natureza · conexão</p>
-                            <h1 class="text-component style-2">MUVYOGA EXPERIENCE MÁNCORA</h1>
-                            <p class="text-component style-7">
+                            <p class="text-component style-5 animate-on-scroll">movimento · natureza · conexão</p>
+                            <h1 class="text-component style-2 animate-on-scroll animate-delay-1">MUVYOGA EXPERIENCE MÁNCORA</h1>
+                            <p class="text-component style-7 animate-on-scroll animate-delay-2">
                                 <span class="p">Uma semana para voltar ao corpo e ao essencial.</span>
                                 <span class="p">Imersão internacional criada para restaurar vitalidade, presença e conexão por meio de práticas conscientes, rituais integrativos e protocolos que expandem a percepção e autonomia.</span>
                             </p>
-                            <div class="cta-wrapper">
+                            
+                            <!-- Contador de Vagas -->
+                            <div class="spots-counter animate-on-scroll animate-delay-3">
+                                <span class="spots-counter__icon"></span>
+                                <span class="spots-counter__text">Apenas <span class="spots-counter__number">8 vagas</span> restantes</span>
+                            </div>
+                            
+                            <div class="cta-wrapper animate-on-scroll animate-delay-4">
                                 <button onclick="openModal()" class="cta-button">Quero Participar</button>
                                 <a href="#experiencia" class="cta-button cta-button--secondary">Saber Mais</a>
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- Indicador de Scroll -->
+                    <a href="#experiencia" class="scroll-indicator">
+                        <div class="scroll-indicator__mouse">
+                            <div class="scroll-indicator__wheel"></div>
+                        </div>
+                        <span>Descubra</span>
+                    </a>
                 </div>
 
                 <!-- A EXPERIÊNCIA -->
                 <div id="experiencia" class="container-component style-2">
                     <div class="wrapper">
                         <div class="inner">
-                            <p class="text-component style-5">movimento · natureza · conexão</p>
-                            <h2 class="text-component style-2">A Experiência</h2>
-                            <p class="text-component style-7">
+                            <p class="text-component style-5 animate-on-scroll">movimento · natureza · conexão</p>
+                            <h2 class="text-component style-2 animate-on-scroll animate-delay-1">A Experiência</h2>
+                            <p class="text-component style-7 animate-on-scroll animate-delay-2">
                                 <span class="p">Sete noites para sair do ruído e retornar ao essencial.</span>
                                 <span class="p">O MuvYoga Experience é uma imersão internacional que integra práticas diárias de movimento consciente, respiração, rituais de integração, silêncio, natureza e descanso real.</span>
                                 <span class="p">Um encontro intimista, em um ambiente à beira-mar, que cria o espaço ideal para aprofundar na prática, expandir a percepção e potencializar a vitalidade.</span>
@@ -1359,7 +1668,7 @@
                 <div class="container-component style-3">
                     <div class="wrapper">
                         <div class="inner">
-                            <div>
+                            <div class="animate-from-left">
                                 <p class="text-component style-5" style="white-space: nowrap;">mover · nutrir · contemplar · conectar</p>
                                 <h2 class="text-component style-2">Os Pilares</h2>
                                 <p class="text-component style-7">
@@ -1369,7 +1678,7 @@
                                     Natureza como mestra</span>
                                 </p>
                             </div>
-                            <div>
+                            <div class="animate-from-right">
                                 <div class="image-component style-1" style="--img-scale: 1.5; --img-position: 0%;">
                                     <span class="frame">
                                         <img src="https://muvyogainfo.carrd.co/assets/images/image02.jpg?v=268f29e7" alt="Os Pilares do MuvYoga" />
@@ -1384,14 +1693,14 @@
                 <div class="container-component style-4">
                     <div class="wrapper">
                         <div class="inner">
-                            <div>
+                            <div class="animate-from-left">
                                 <div class="image-component style-1" style="--img-scale: 1.5; --img-position: -30%;">
                                     <span class="frame">
                                         <img src="https://muvyogainfo.carrd.co/assets/images/image03.jpg?v=268f29e7" alt="Máncora, Peru" />
                                     </span>
                                 </div>
                             </div>
-                            <div>
+                            <div class="animate-from-right">
                                 <p class="text-component style-6">mar · sol · vento</p>
                                 <h2 class="text-component style-4">O Lugar</h2>
                                 <p class="text-component style-3">
@@ -1407,7 +1716,7 @@
                 <div class="container-component style-3">
                     <div class="wrapper">
                         <div class="inner">
-                            <div>
+                            <div class="animate-from-left">
                                 <p class="text-component style-5">uma semana fora do ruído</p>
                                 <h2 class="text-component style-2">Data &amp; Duração</h2>
                                 <p class="text-component style-7">
@@ -1417,7 +1726,7 @@
                                 </p>
                                 <button onclick="openModal()" class="cta-button">Reservar Minha Vaga</button>
                             </div>
-                            <div>
+                            <div class="animate-from-right">
                                 <div class="image-component style-1" style="--img-scale: 1.3; --img-position: 5%;">
                                     <span class="frame">
                                         <img src="https://muvyogainfo.carrd.co/assets/images/image04.jpg?v=268f29e7" alt="Máncora" />
@@ -1432,14 +1741,14 @@
                 <div class="container-component style-4">
                     <div class="wrapper">
                         <div class="inner">
-                            <div>
+                            <div class="animate-from-left">
                                 <div class="image-component style-1" style="--img-scale: 1.8; --img-position: -45%;">
                                     <span class="frame">
                                         <img src="https://muvyogainfo.carrd.co/assets/images/image01.jpg?v=268f29e7" alt="Para quem é" />
                                     </span>
                                 </div>
                             </div>
-                            <div>
+                            <div class="animate-from-right">
                                 <p class="text-component style-6">se esse chamado ressoa</p>
                                 <h2 class="text-component style-4">Pra Quem É</h2>
                                 <p class="text-component style-3">
@@ -1458,9 +1767,9 @@
                 <div class="container-component style-2">
                     <div class="wrapper">
                         <div class="inner">
-                            <p class="text-component style-5">tudo o que você precisa</p>
-                            <h2 class="text-component style-2">O Que Está Incluído</h2>
-                            <p class="text-component style-7">
+                            <p class="text-component style-5 animate-on-scroll">tudo o que você precisa</p>
+                            <h2 class="text-component style-2 animate-on-scroll animate-delay-1">O Que Está Incluído</h2>
+                            <p class="text-component style-7 animate-on-scroll animate-delay-2">
                                 <span class="p">• 7 noites de hospedagem boutique<br>
                                 • Alimentação completa<br>
                                 • Práticas diárias de MuvYoga</span>
@@ -1470,7 +1779,7 @@
                 </div>
 
                 <!-- GALERIA 1 -->
-                <div class="gallery-component style-1">
+                <div class="gallery-component style-1 animate-scale">
                     <div class="inner">
                         <ul>
                             <li>
@@ -1505,9 +1814,9 @@
                 <div class="container-component style-2">
                     <div class="wrapper">
                         <div class="inner">
-                            <p class="text-component style-5">tudo o que você precisa</p>
-                            <h2 class="text-component style-2">O Que Está Incluído</h2>
-                            <p class="text-component style-7">
+                            <p class="text-component style-5 animate-on-scroll">tudo o que você precisa</p>
+                            <h2 class="text-component style-2 animate-on-scroll animate-delay-1">O Que Está Incluído</h2>
+                            <p class="text-component style-7 animate-on-scroll animate-delay-2">
                                 <span class="p">• Rituais de respiração e integração<br>
                                 • Espaços de silêncio e descanso<br>
                                 • Curadoria integral da experiência</span>
@@ -1517,7 +1826,7 @@
                 </div>
 
                 <!-- GALERIA 2 -->
-                <div class="gallery-component style-1">
+                <div class="gallery-component style-1 animate-scale">
                     <div class="inner">
                         <ul>
                             <li>
@@ -1552,15 +1861,15 @@
                 <div class="container-component style-2">
                     <div class="wrapper">
                         <div class="inner">
-                            <p class="text-component style-5">clareza e transparência</p>
-                            <h2 class="text-component style-2">O Que Não Está Incluído</h2>
-                            <p class="text-component style-7">
+                            <p class="text-component style-5 animate-on-scroll">clareza e transparência</p>
+                            <h2 class="text-component style-2 animate-on-scroll animate-delay-1">O Que Não Está Incluído</h2>
+                            <p class="text-component style-7 animate-on-scroll animate-delay-2">
                                 <span class="p">• Logística aérea e terrestre<br>
                                 • Seguro-viagem<br>
                                 • Despesas pessoais extras<br>
                                 • Atividades realizadas por facilitadores locais</span>
                             </p>
-                            <p class="text-component style-8">Toda a orientação logística será enviada após a confirmação da vaga.</p>
+                            <p class="text-component style-8 animate-on-scroll animate-delay-3">Toda a orientação logística será enviada após a confirmação da vaga.</p>
                         </div>
                     </div>
                 </div>
@@ -1569,16 +1878,22 @@
                 <div id="reservar" class="container-component style-4">
                     <div class="wrapper">
                         <div class="inner">
-                            <div>
+                            <div class="animate-from-left">
                                 <div class="image-component style-1" style="--img-scale: 1.3; --img-position: -25%;">
                                     <span class="frame">
                                         <img src="https://muvyogainfo.carrd.co/assets/images/image05.jpg?v=268f29e7" alt="Investimento" />
                                     </span>
                                 </div>
                             </div>
-                            <div>
+                            <div class="animate-from-right">
                                 <p class="text-component style-6">invista em você</p>
                                 <h2 class="text-component style-4">Investimento</h2>
+                                
+                                <!-- Contador de vagas (versão escura) -->
+                                <div class="spots-counter spots-counter--dark">
+                                    <span class="spots-counter__icon"></span>
+                                    <span class="spots-counter__text">Apenas <span class="spots-counter__number">8 vagas</span> restantes</span>
+                                </div>
                                 
                                 <div class="pricing-card">
                                     <div class="pricing-card__badge">Valor da Imersão Completa</div>
@@ -1638,10 +1953,10 @@
                 <div class="conductor-section">
                     <div class="wrapper">
                         <div class="inner">
-                            <div class="conductor-section__image" style="--img-scale: 1.5; --img-position: -15%;">
+                            <div class="conductor-section__image animate-from-left" style="--img-scale: 1.5; --img-position: -15%;">
                                 <img src="https://i.postimg.cc/qB6cGKFk/491433564-18507533578051265-1036449777796320103-n.jpg" alt="Ricardo Barbato" class="conductor-section__photo" />
                             </div>
-                            <div class="conductor-section__content">
+                            <div class="conductor-section__content animate-from-right">
                                 <p class="conductor-section__label">Tradição e Inovação</p>
                                 <h2 class="conductor-section__title">Ricardo Barbato</h2>
                                 <div class="conductor-section__bio">
@@ -1655,6 +1970,11 @@
                                     <span class="conductor-section__credential">MuvMedicine Instructor</span>
                                     <span class="conductor-section__credential">+152K Comunidade</span>
                                 </div>
+                                
+                                <!-- CTA após seção do condutor -->
+                                <button onclick="openModal()" class="cta-button" style="margin-top: 2.5rem;">
+                                    Quero Praticar com Ricardo
+                                </button>
                             </div>
                         </div>
                     </div>
@@ -1663,12 +1983,12 @@
                 <!-- FAQ -->
                 <section class="faq-section">
                     <div class="faq-section__header">
-                        <p class="text-component style-5">tire suas dúvidas</p>
-                        <h2 class="text-component style-2">Perguntas Frequentes</h2>
+                        <p class="text-component style-5 animate-on-scroll">tire suas dúvidas</p>
+                        <h2 class="text-component style-2 animate-on-scroll animate-delay-1">Perguntas Frequentes</h2>
                     </div>
                     
                     <div class="faq-container">
-                        <div class="faq-item">
+                        <div class="faq-item animate-on-scroll">
                             <button class="faq-question">
                                 <span class="faq-question__text">Preciso ter experiência com yoga para participar?</span>
                                 <span class="faq-question__icon"></span>
@@ -1678,7 +1998,7 @@
                             </div>
                         </div>
                         
-                        <div class="faq-item">
+                        <div class="faq-item animate-on-scroll animate-delay-1">
                             <button class="faq-question">
                                 <span class="faq-question__text">Como funciona a hospedagem?</span>
                                 <span class="faq-question__icon"></span>
@@ -1688,7 +2008,7 @@
                             </div>
                         </div>
                         
-                        <div class="faq-item">
+                        <div class="faq-item animate-on-scroll animate-delay-2">
                             <button class="faq-question">
                                 <span class="faq-question__text">O que inclui a alimentação?</span>
                                 <span class="faq-question__icon"></span>
@@ -1698,7 +2018,7 @@
                             </div>
                         </div>
                         
-                        <div class="faq-item">
+                        <div class="faq-item animate-on-scroll animate-delay-3">
                             <button class="faq-question">
                                 <span class="faq-question__text">Como é a rotina durante a imersão?</span>
                                 <span class="faq-question__icon"></span>
@@ -1708,7 +2028,7 @@
                             </div>
                         </div>
                         
-                        <div class="faq-item">
+                        <div class="faq-item animate-on-scroll animate-delay-4">
                             <button class="faq-question">
                                 <span class="faq-question__text">Como chego até Máncora?</span>
                                 <span class="faq-question__icon"></span>
@@ -1718,7 +2038,7 @@
                             </div>
                         </div>
                         
-                        <div class="faq-item">
+                        <div class="faq-item animate-on-scroll">
                             <button class="faq-question">
                                 <span class="faq-question__text">E se o grupo mínimo não for formado?</span>
                                 <span class="faq-question__icon"></span>
@@ -1728,7 +2048,7 @@
                             </div>
                         </div>
                         
-                        <div class="faq-item">
+                        <div class="faq-item animate-on-scroll animate-delay-1">
                             <button class="faq-question">
                                 <span class="faq-question__text">Posso parcelar o pagamento?</span>
                                 <span class="faq-question__icon"></span>
@@ -1738,19 +2058,36 @@
                             </div>
                         </div>
                     </div>
+                    
+                    <!-- CTA após FAQ -->
+                    <div style="text-align: center; margin-top: 3rem;" class="animate-on-scroll">
+                        <p class="text-component style-7" style="margin-bottom: 1rem;">
+                            <span class="p">Ainda tem dúvidas? Fale diretamente conosco.</span>
+                        </p>
+                        <button onclick="openModal()" class="cta-button cta-button--secondary">
+                            Falar com a Equipe
+                        </button>
+                    </div>
                 </section>
 
                 <!-- CTA FINAL -->
                 <div class="container-component instance-cta style-1">
                     <div class="wrapper">
                         <div class="inner">
-                            <p class="text-component style-5">pronto para viver essa experiência?</p>
-                            <h2 class="text-component style-2">Se Permita</h2>
-                            <p class="text-component style-7">
+                            <p class="text-component style-5 animate-on-scroll">pronto para viver essa experiência?</p>
+                            <h2 class="text-component style-2 animate-on-scroll animate-delay-1">Se Permita</h2>
+                            <p class="text-component style-7 animate-on-scroll animate-delay-2">
                                 <span class="p">As vagas são limitadas a um grupo intimista de 12 pessoas.</span>
                                 <span class="p">Se sentir que este chamado é para você, entre em contato para garantir sua vaga ou tirar dúvidas.</span>
                             </p>
-                            <div class="cta-wrapper">
+                            
+                            <!-- Contador final -->
+                            <div class="spots-counter animate-on-scroll animate-delay-3">
+                                <span class="spots-counter__icon"></span>
+                                <span class="spots-counter__text">Apenas <span class="spots-counter__number">8 vagas</span> restantes</span>
+                            </div>
+                            
+                            <div class="cta-wrapper animate-on-scroll animate-delay-4">
                                 <button onclick="openModal()" class="cta-button">Garantir Minha Vaga</button>
                             </div>
                         </div>
@@ -1795,25 +2132,59 @@
     </div>
 
     <script>
-        // FAQ Accordion
+        // ========================================
+        // PROGRESS BAR
+        // ========================================
+        window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY;
+            const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            document.getElementById('progressBar').style.width = scrollPercent + '%';
+        });
+
+        // ========================================
+        // ANIMAÇÕES AO SCROLL (Intersection Observer)
+        // ========================================
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.1
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animated');
+                }
+            });
+        }, observerOptions);
+
+        // Observa todos os elementos com classes de animação
+        document.querySelectorAll('.animate-on-scroll, .animate-from-left, .animate-from-right, .animate-scale').forEach(el => {
+            observer.observe(el);
+        });
+
+        // ========================================
+        // FAQ ACCORDION
+        // ========================================
         document.querySelectorAll('.faq-question').forEach(button => {
             button.addEventListener('click', () => {
                 const item = button.parentElement;
                 const isActive = item.classList.contains('active');
                 
-                // Fecha todos
                 document.querySelectorAll('.faq-item').forEach(i => {
                     i.classList.remove('active');
                 });
                 
-                // Abre o clicado (se não estava ativo)
                 if (!isActive) {
                     item.classList.add('active');
                 }
             });
         });
 
-        // Modal functions
+        // ========================================
+        // MODAL
+        // ========================================
         function openModal() {
             document.getElementById('captureModal').classList.add('active');
             document.body.style.overflow = 'hidden';
@@ -1824,21 +2195,21 @@
             document.body.style.overflow = '';
         }
 
-        // Fechar modal clicando fora
         document.getElementById('captureModal').addEventListener('click', (e) => {
             if (e.target === e.currentTarget) {
                 closeModal();
             }
         });
 
-        // Fechar com ESC
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeModal();
             }
         });
 
-        // Form submit
+        // ========================================
+        // FORM SUBMIT
+        // ========================================
         document.getElementById('captureForm').addEventListener('submit', function(e) {
             e.preventDefault();
             
@@ -1883,6 +2254,22 @@
                 form.reset();
                 submitBtn.textContent = originalText;
                 submitBtn.disabled = false;
+            });
+        });
+
+        // ========================================
+        // SMOOTH SCROLL PARA ÂNCORAS
+        // ========================================
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
             });
         });
     </script>
