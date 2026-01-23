@@ -303,7 +303,7 @@
         .container-component.style-1 {
             display: flex;
             width: 100%;
-            min-height: 49rem;
+            min-height: 100vh;
             align-items: center;
             justify-content: center;
             background-attachment: fixed;
@@ -316,10 +316,11 @@
 
         .container-component.style-1 > .wrapper > .inner {
             padding: 6rem;
+            padding-bottom: 7rem;
         }
 
         .container-component.style-1 > .wrapper > .inner > * {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1rem;
         }
 
         .container-component.style-1 > .wrapper > .inner > *:last-child {
@@ -700,7 +701,6 @@
             cursor: pointer;
             text-decoration: none;
             transition: all 0.3s ease;
-            margin-top: 2rem;
             position: relative;
             overflow: hidden;
             /* Efeito de brilho base */
@@ -798,6 +798,13 @@
                 0 0 30px rgba(237, 240, 105, 0.2);
         }
 
+        /* HERO CTA - Centralizado e com margin ajustada */
+        .hero-cta-wrapper {
+            display: flex;
+            justify-content: center;
+            margin-top: 0.5rem;
+        }
+
         .cta-wrapper {
             display: flex;
             flex-wrap: wrap;
@@ -811,21 +818,22 @@
            ======================================== */
         .scroll-indicator {
             position: absolute;
-            bottom: 40px;
+            bottom: 30px;
             left: 50%;
             transform: translateX(-50%);
             display: flex;
             flex-direction: column;
             align-items: center;
-            gap: 10px;
-            color: rgba(255,255,255,0.6);
+            gap: 8px;
+            color: rgba(255,255,255,0.5);
             font-family: 'Inter', sans-serif;
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
+            font-size: 0.65rem;
+            letter-spacing: 0.15em;
             text-transform: uppercase;
             animation: bounce 2s ease-in-out infinite;
             cursor: pointer;
             transition: color 0.3s ease;
+            text-decoration: none;
         }
 
         .scroll-indicator:hover {
@@ -833,20 +841,20 @@
         }
 
         .scroll-indicator__mouse {
-            width: 24px;
-            height: 40px;
+            width: 20px;
+            height: 32px;
             border: 2px solid currentColor;
-            border-radius: 12px;
+            border-radius: 10px;
             position: relative;
         }
 
         .scroll-indicator__wheel {
-            width: 4px;
-            height: 8px;
+            width: 3px;
+            height: 6px;
             background: currentColor;
             border-radius: 2px;
             position: absolute;
-            top: 8px;
+            top: 6px;
             left: 50%;
             transform: translateX(-50%);
             animation: scroll-wheel 2s ease-in-out infinite;
@@ -854,12 +862,12 @@
 
         @keyframes bounce {
             0%, 100% { transform: translateX(-50%) translateY(0); }
-            50% { transform: translateX(-50%) translateY(10px); }
+            50% { transform: translateX(-50%) translateY(8px); }
         }
 
         @keyframes scroll-wheel {
-            0%, 100% { opacity: 1; top: 8px; }
-            50% { opacity: 0.3; top: 18px; }
+            0%, 100% { opacity: 1; top: 6px; }
+            50% { opacity: 0.3; top: 14px; }
         }
 
         /* ========================================
@@ -872,7 +880,7 @@
             background: rgba(237, 240, 105, 0.1);
             border: 1px solid rgba(237, 240, 105, 0.3);
             padding: 12px 24px;
-            margin-bottom: 1.5rem;
+            margin-bottom: 0.5rem;
             animation: pulse-glow 2s ease-in-out infinite;
         }
 
@@ -1485,22 +1493,26 @@
         @media (max-width: 736px) {
             html { font-size: 12pt; }
             
-            .container-component.style-1 > .wrapper > .inner,
+            /* HERO MOBILE - Padding ajustado */
+            .container-component.style-1 > .wrapper > .inner {
+                padding: 3rem 1.5rem 6rem;
+            }
+            
             .container-component.style-2 > .wrapper > .inner {
-                padding: 3.5rem 2rem;
+                padding: 3.5rem 1.5rem;
             }
             
             .container-component.style-3 > .wrapper > .inner,
             .container-component.style-4 > .wrapper > .inner {
                 flex-direction: column;
-                padding: 3.5rem 2rem;
+                padding: 3rem 0;
             }
             
             .container-component.style-3 > .wrapper > .inner > div,
             .container-component.style-4 > .wrapper > .inner > div {
                 flex: 0 0 100%;
                 max-width: 100%;
-                padding: 2rem 0;
+                padding: 2rem 1.5rem;
             }
             
             .text-component.style-2,
@@ -1512,21 +1524,54 @@
                 hyphens: none;
             }
             
-            .image-component > .frame {
+            /* ============================================
+               IMAGENS MAIORES NO MOBILE - TOCANDO BORDAS
+               ============================================ */
+            .container-component.style-3 > .wrapper > .inner > div .image-component,
+            .container-component.style-4 > .wrapper > .inner > div .image-component {
+                width: calc(100% + 3rem);
+                margin-left: -1.5rem;
+                margin-right: -1.5rem;
+            }
+            
+            .container-component.style-3 > .wrapper > .inner > div .image-component > .frame,
+            .container-component.style-4 > .wrapper > .inner > div .image-component > .frame {
                 transform: translateX(0) !important;
-                margin-left: auto !important;
-                margin-right: auto !important;
                 width: 100% !important;
+            }
+            
+            .container-component.style-3 > .wrapper > .inner > div .image-component > .frame > img,
+            .container-component.style-4 > .wrapper > .inner > div .image-component > .frame > img {
+                width: 100% !important;
+                max-width: none !important;
+            }
+            
+            /* SCROLL INDICATOR - Posição ajustada */
+            .scroll-indicator {
+                bottom: 15px;
+            }
+            
+            /* CTA WRAPPER no hero */
+            .hero-cta-wrapper {
+                margin-top: 0.5rem;
+            }
+            
+            /* CONDUTOR SEÇÃO - IMAGEM MAIOR */
+            .conductor-section {
+                padding: 4rem 0;
             }
             
             .conductor-section > .wrapper > .inner {
                 flex-direction: column;
+                gap: 2rem;
             }
             
             .conductor-section__image {
                 flex: 0 0 100% !important;
-                max-width: 300px !important;
-                margin: 0 auto;
+                max-width: 100% !important;
+                width: calc(100% + 3rem) !important;
+                margin-left: -1.5rem;
+                margin-right: -1.5rem;
             }
             
             .conductor-section__photo {
@@ -1535,6 +1580,11 @@
                 width: 100% !important;
             }
             
+            .conductor-section__content {
+                padding: 0 1.5rem;
+            }
+            
+            /* GALERIA - IMAGENS MAIORES */
             .gallery-component ul {
                 flex-direction: column;
             }
@@ -1545,8 +1595,10 @@
             
             .gallery-component ul > li > .thumbnail > .frame > img {
                 height: auto;
+                min-height: 250px;
             }
             
+            /* BOTÃO FLUTUANTE */
             .floating-cta span {
                 display: none;
             }
@@ -1558,8 +1610,9 @@
                 right: 20px;
             }
             
+            /* PRICING CARD */
             .pricing-card {
-                padding: 2rem;
+                padding: 2rem 1.5rem;
             }
             
             .pricing-card__amount {
@@ -1571,17 +1624,20 @@
                 line-height: 1.6;
             }
             
+            /* MODAL */
             .modal {
-                padding: 2rem;
+                padding: 2rem 1.5rem;
             }
             
+            /* BOTÕES */
             .cta-button {
                 padding: 15px 30px;
                 font-size: 0.9rem;
             }
-
-            .scroll-indicator {
-                bottom: 20px;
+            
+            /* FAQ */
+            .faq-section {
+                padding: 4rem 1.5rem;
             }
 
             /* Desativa algumas animações em mobile para performance */
@@ -1603,6 +1659,12 @@
             
             .faq-question__text {
                 font-size: 1rem;
+            }
+            
+            .text-component.style-2,
+            .text-component.style-4 {
+                font-size: 1.5em;
+                letter-spacing: 0.15rem;
             }
         }
     </style>
@@ -1633,9 +1695,9 @@
                                 <span class="spots-counter__text">Apenas <span class="spots-counter__number">8 vagas</span> restantes</span>
                             </div>
                             
-                            <div class="cta-wrapper animate-on-scroll animate-delay-4">
+                            <!-- CTA ÚNICO E CENTRALIZADO -->
+                            <div class="hero-cta-wrapper animate-on-scroll animate-delay-4">
                                 <button onclick="openModal()" class="cta-button">Quero Participar</button>
-                                <a href="#experiencia" class="cta-button cta-button--secondary">Saber Mais</a>
                             </div>
                         </div>
                     </div>
@@ -1724,7 +1786,7 @@
                                     <span class="p">Sete noites e oito dias de imersão completa.</span>
                                     <span class="p">Tempo real para restaurar vitalidade e retornar ao corpo em um ambiente natural, simples e vivo.</span>
                                 </p>
-                                <button onclick="openModal()" class="cta-button">Reservar Minha Vaga</button>
+                                <button onclick="openModal()" class="cta-button" style="margin-top: 1.5rem;">Reservar Minha Vaga</button>
                             </div>
                             <div class="animate-from-right">
                                 <div class="image-component style-1" style="--img-scale: 1.3; --img-position: 5%;">
@@ -2087,7 +2149,7 @@
                                 <span class="spots-counter__text">Apenas <span class="spots-counter__number">8 vagas</span> restantes</span>
                             </div>
                             
-                            <div class="cta-wrapper animate-on-scroll animate-delay-4">
+                            <div class="hero-cta-wrapper animate-on-scroll animate-delay-4">
                                 <button onclick="openModal()" class="cta-button">Garantir Minha Vaga</button>
                             </div>
                         </div>
