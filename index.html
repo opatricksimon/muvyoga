@@ -498,19 +498,21 @@
    ======================================== */
 .conductor-section__image {
     flex: 0 0 400px;
-    max-width: 100%;
+    max-width: none;
     position: relative;
+    overflow: visible;
     --img-scale: 1;
     --img-position: 0;
-    overflow: visible;
 }
 
 .conductor-section__photo {
-    width: calc(100% * var(--img-scale));
+    width: calc(400px * var(--img-scale));
+    max-width: none;
     height: auto;
     object-fit: cover;
     transform: translateX(var(--img-position));
 }
+
 
 /* ========================================
    RESPONSIVO - Mobile fica centralizado
@@ -1683,7 +1685,7 @@
             <div class="conductor-section">
                 <div class="wrapper">
                     <div class="inner">
-                        <div class="conductor-section__image" style="--img-scale: 4.8; --img-position: -40%;">
+                        <div class="conductor-section__image" style="--img-scale: 1.8; --img-position: -40%;">
                             <img src="https://i.postimg.cc/qB6cGKFk/491433564-18507533578051265-1036449777796320103-n.jpg" alt="Ricardo Barbato" class="conductor-section__photo" />
                         </div>
                         <div class="conductor-section__content">
