@@ -1919,12 +1919,15 @@
             const email = form.querySelector('input[name="email"]').value;
             const telefone = form.querySelector('input[name="telefone"]').value;
             
+            // Pega só o primeiro nome
+            const primeiroNome = nome.split(' ')[0];
+            
             // Mostra loading
             submitBtn.textContent = 'Enviando...';
             submitBtn.disabled = true;
             
-            // URL do Google Sheets Web App (substitua pela sua URL)
-            const googleSheetsURL = 'https://script.google.com/macros/s/AKfycbwRvVfBMNv0w_lGVOIJfA8XYZEXAMPLE/exec';
+            // URL do Google Sheets Web App
+            const googleSheetsURL = 'https://script.google.com/macros/s/AKfycbwV1Ez9qC7F77_fX84so3FNasPTmVSTTkEm_3LVqQHdQMS407m0RGSvq4rlRawnPCFXCA/exec';
             
             // Envia para Google Sheets
             fetch(googleSheetsURL, {
@@ -1945,12 +1948,9 @@
                 // Fecha o modal
                 closeModal();
                 
-                // Monta a mensagem para WhatsApp
+                // Mensagem simples e direta pro WhatsApp
                 const mensagem = encodeURIComponent(
-                    `Olá, tenho interesse no MuvYoga Experience Máncora!\n\n` +
-                    `*Nome:* ${nome}\n` +
-                    `*Email:* ${email}\n` +
-                    `*WhatsApp:* ${telefone}`
+                    `Oi Ricardo! Aqui é ${primeiroNome}, tenho interesse na imersão em Máncora.`
                 );
                 
                 // Redireciona para WhatsApp do Ricardo Barbato
@@ -1964,14 +1964,11 @@
             .catch((error) => {
                 console.error('Erro:', error);
                 
-                // Mesmo com erro, redireciona para WhatsApp (para não perder o lead)
+                // Mesmo com erro, redireciona para WhatsApp
                 closeModal();
                 
                 const mensagem = encodeURIComponent(
-                    `Olá, tenho interesse no MuvYoga Experience Máncora!\n\n` +
-                    `*Nome:* ${nome}\n` +
-                    `*Email:* ${email}\n` +
-                    `*WhatsApp:* ${telefone}`
+                    `Oi Ricardo! Aqui é ${primeiroNome}, tenho interesse na imersão em Máncora.`
                 );
                 
                 window.open(`https://wa.me/5511943421151?text=${mensagem}`, '_blank');
