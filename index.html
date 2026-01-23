@@ -494,23 +494,41 @@
 .image-component.img-right { --img-position: 20%; }
 
 /* ========================================
-   SEÇÃO DO CONDUTOR - Mesmo sistema
+   SEÇÃO DO CONDUTOR - Com controle de tamanho e posição
    ======================================== */
+/*
+   COMO USAR NA SEÇÃO DO CONDUTOR:
+   ----------------------------------------
+   <div class="conductor-section__image" style="--img-scale: 1.5; --img-position: -20%;">
+   
+   --img-scale: tamanho (1 = 100%, 1.5 = 150%, 2 = 200%)
+   --img-position: posição horizontal (negativo = esquerda, positivo = direita)
+*/
+
 .conductor-section__image {
-    flex: 0 0 400px;
+    --img-scale: 1;
+    --img-position: 0;
+    flex: 0 0 calc(400px * var(--img-scale));
     max-width: none;
     position: relative;
     overflow: visible;
-    --img-scale: 1;
-    --img-position: 0;
 }
 
 .conductor-section__photo {
-    width: calc(400px * var(--img-scale));
+    width: 100%;
     max-width: none;
     height: auto;
     object-fit: cover;
     transform: translateX(var(--img-position));
+}
+
+/* Garante que o wrapper não corte a imagem */
+.conductor-section > .wrapper {
+    overflow: visible;
+}
+
+.conductor-section > .wrapper > .inner {
+    overflow: visible;
 }
 
 
@@ -526,16 +544,19 @@
         width: 100% !important; /* No mobile, 100% sempre */
     }
     
+        .conductor-section__image {
+        flex: 0 0 100% !important;
+        max-width: 300px !important;
+        margin: 0 auto;
+        --img-scale: 1 !important;
+        --img-position: 0 !important;
+    }
+    
     .conductor-section__photo {
         transform: translateX(0) !important;
         width: 100% !important;
     }
-    
-    .conductor-section__image {
-        flex: 0 0 100%;
-        max-width: 300px;
-        margin: 0 auto;
-    }
+
 }
 
         /* ========================================
